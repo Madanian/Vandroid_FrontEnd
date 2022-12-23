@@ -1,7 +1,7 @@
 <template>
   <div>
-    <NavigationDrawer v-if="isShowNav"></NavigationDrawer>
-    <Header appBarNavIcon @click="showNav" :leftIcons="leftIcons" :rightIcons="rightIcons"></Header>
+    <NavigationDrawer v-if="isShowNav" :color="color"></NavigationDrawer>
+    <Header appBarNavIcon @click="showNav" :leftIcons="leftIcons" :color="color"></Header>
     <v-main>
       <div class="mx-8 mt-8 mb-5">
         <ExpansionPanel></ExpansionPanel>
@@ -23,7 +23,7 @@ export default {
         { id: 1, name: "mdi-magnify", link: "#" },
         { id: 2, name: "mdi-earth", link: "#" },
       ],
-
+      color: "#f2f4f4",
     };
   },
   methods: {
