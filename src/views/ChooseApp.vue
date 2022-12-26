@@ -1,107 +1,96 @@
 <template>
   <div>
-    <Header :leftIcons="leftIcons" :color="color"></Header>
+    <Header :rightIcons="rightIcons" :color="headerColor"></Header>
+    <v-card class="d-flex align-center" flat height="100vh">
+      <v-row justify="center">
+        <v-col cols="12" sm="12" md="12" lg="12" class="mb-16">
+          <v-row align="center" justify="center">
+            <v-col cols="8" sm="5" md="3" lg="3">
+              <FileInput></FileInput>
+            </v-col>
+          </v-row>
+        </v-col>
 
-    <v-main>
-      <!-- <v-container fill-height>
-        <v-row align="center" justify="center" no-gutters>
-          <v-col cols="10" sm="10" md="10">
-            <v-card class="mx-auto card">
-              <v-file-input
-                v-model="files"
-                color="deep-purple accent-4"
-                counter
-                label="File input"
-                multiple
-                placeholder="Select your files"
-                prepend-icon="mdi-paperclip"
-                outlined
-                :show-size="1000"
-              >
-                <template v-slot:selection="{ index, text }">
-                  <v-chip
-                    v-if="index < 2"
-                    color="deep-purple accent-4"
-                    dark
-                    label
-                    small
-                  >
-                    {{ text }}
-                  </v-chip>
+        <v-col cols="12" sm="12" md="12" lg="12">
+          <v-row justify="center">
+            <v-col cols="9" sm="8" md="6" lg="6">
+              <Combobox
+                @selectedItems="selectItem"
+                :items="ComboboxItems"
+              ></Combobox>
+            </v-col>
+          </v-row>
+        </v-col>
 
-                  <span
-                    v-else-if="index === 2"
-                    class="text-overline grey--text text--darken-3 mx-2"
-                  >
-                    +{{ files.length - 2 }} File(s)
-                  </span>
-                </template>
-              </v-file-input>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container> -->
-      <v-card class="d-flex align-center" flat height="90vh" tile>
-        <v-row align="center" justify="center" no-gutters>
-          <v-col cols="3" sm="3" md="3">
-            <v-file-input
-              v-model="files"
-              color="#2b8700"
-              counter
-              label="Choose Your Application Files"
-              multiple
-              placeholder="Select your files"
-              prepend-icon="mdi-paperclip"
-              outlined
-              :show-size="1000"
-            >
-              <template v-slot:selection="{ index, text }">
-                <v-chip
-                  v-if="index < 2"
-                  color="#329505"
-                  dark
-                  label
-                  small
-                >
-                  {{ text }}
-                </v-chip>
-
-                <span
-                  v-else-if="index === 2"
-                  class="text-overline grey--text text--darken-3 mx-2"
-                >
-                  +{{ files.length - 2 }} File(s)
-                </span>
-              </template>
-            </v-file-input>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-main>
+        <v-col cols="12" sm="12" md="12" lg="12">
+          <v-row justify="center">
+            <v-col cols="4" sm="2" md="2" lg="2">
+              <Button
+                input_value="Analyze"
+                color="green"
+                dark
+                block
+                class="mt-16"
+                @click="submitData"
+              ></Button>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-card>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+import FileInput from "@/components/Basics/FileInput.vue";
+import Combobox from "@/components/Basics/Combobox.vue";
+import Button from "@/components/Basics/Button.vue";
+import router from "@/router";
 export default {
   name: "ChooseApp",
   data() {
     return {
-      leftIcons: [
-        { id: 1, name: "mdi-magnify", link: "#" },
-        { id: 2, name: "mdi-earth", link: "#" },
+      rightIcons: [{ id: 1, name: "mdi-earth", link: "#" }],
+      ComboboxItems: [
+        "Telegram",
+        "Whatsapp",
+        "Eitaa",
+        "Soroush",
+        "Bale",
+        "Imo",
       ],
-      color: "#f2f4f4",
+      headerColor: "#f2f4f4",
+      comboboxSelectItems: [],
     };
   },
   components: {
     Header,
+    Footer,
+    FileInput,
+    Combobox,
+    Button,
+  },
+  methods: {
+    selectItem(selectItems) {
+      this.comboboxSelectItems = selectItems;
+    },
+    submitData() {
+      if (this.comboboxSelectItems.length > 0) {
+        console.log(this.comboboxSelectItems);
+        router.push("/app-analysis");
+      } else {
+        alert("You Should Choose the Name of a Application!")
+      }
+    },
   },
 };
 </script>
 
-<style scoped>
-.co{
-    color: #329505;
+<style>
+.v-btn {
+  text-transform: none;
 }
 </style>

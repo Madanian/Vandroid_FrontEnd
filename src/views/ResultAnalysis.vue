@@ -1,7 +1,7 @@
 <template>
   <div>
-    <NavigationDrawer v-if="isShowNav" :color="color"></NavigationDrawer>
-    <Header appBarNavIcon @click="showNav" :leftIcons="leftIcons" :color="color"></Header>
+    <NavigationDrawer v-if="isShowNav" :color="headerAndNavigationColor"></NavigationDrawer>
+    <Header appBarNavIcon @click="showNav" :rightIcons="rightIcons" :color="headerAndNavigationColor"></Header>
     <v-main>
       <div class="mx-8 mt-8 mb-5">
         <ExpansionPanel></ExpansionPanel>
@@ -15,15 +15,14 @@ import Header from "@/components/Header.vue";
 import NavigationDrawer from "@/components/NavigationDrawer.vue";
 import ExpansionPanel from "@/components/Basics/ExpansionPanel.vue"
 export default {
-  name: "Home",
+  name: "ResultAnalysis",
   data() {
     return {
       isShowNav: null,
-      leftIcons: [
-        { id: 1, name: "mdi-magnify", link: "#" },
-        { id: 2, name: "mdi-earth", link: "#" },
+      rightIcons: [
+        { id: 1, name: "mdi-earth", link: "#" },
       ],
-      color: "#f2f4f4",
+      headerAndNavigationColor: "#f2f4f4",
     };
   },
   methods: {

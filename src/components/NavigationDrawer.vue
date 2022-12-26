@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer
-    width=" 284.16px"
+    width=" 292px"
     v-model="show"
     app
     :color="color"
@@ -213,5 +213,9 @@ export default {
 
 .v-list-item-group .v-list-item--active {
   color: green;
+}
+
+.v-list-item--dense .v-list-item__title, .v-list-item--dense .v-list-item__subtitle, .v-list--dense .v-list-item .v-list-item__title, .v-list--dense .v-list-item .v-list-item__subtitle{
+  font-weight: 400;
 }
 </style>

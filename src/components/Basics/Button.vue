@@ -29,7 +29,7 @@
     :loading="loading"
     @click="onClick"
     :class="{ notActiveClass: notActive }"
-    class="px-3"
+    class="px-2"
   >
     <slot name="buttonSlotBefor"></slot>
     {{ input_value }}

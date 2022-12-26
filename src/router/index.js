@@ -1,21 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '@/views/HomeView.vue'
-// import ChooseApp from '@/views/ChooseApp.vue'
+import ResultAnalysis from '@/views/ResultAnalysis.vue'
+import ChooseApp from '@/views/ChooseApp.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/app-analysis',
+    name: 'resultAnalysis',
+    component: ResultAnalysis
   },
-  // {
-  //   path: '/choose-app',
-  //   name: 'chooseApp',
-  //   component: ChooseApp
-  // },
+  {
+    path: '/choose-app',
+    name: 'chooseApp',
+    component: ChooseApp
+  },
 ]
 
 const router = new VueRouter({
