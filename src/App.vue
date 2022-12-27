@@ -18,12 +18,12 @@ export default {
   font-weight: 400;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
-} 
+}
 
-a:hover{
-  color: green !important
+a:hover {
+  color: green !important;
 }
 </style>

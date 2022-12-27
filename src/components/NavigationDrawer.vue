@@ -7,7 +7,7 @@
     @click="onClick"
   >
     <v-list>
-      <v-list-item to="/a">
+      <v-list-item>
         <img
           src="@/assets/images/vandroid.png"
           width="200px"
@@ -19,7 +19,7 @@
 
     <v-divider></v-divider>
 
-    <v-list dense class="ml-3 mr-0 pr-1">
+    <v-list dense class="ml-3 mr-1 pr-1">
       <v-list-item-group>
         <div v-for="category in categorys" :key="category.title" class="items">
           <v-list-item
@@ -57,7 +57,8 @@
 
               <v-expansion-panel-content :color="color" class="pl-2">
                 <div v-for="item in category.items" :key="item.title" class="item-expansion-hover">
-                  <v-list-item :to="item.link">
+                  <v-list-item @click="scrollToComponent(item.scrollId)">
+                    <!-- @click="$vuetify.goTo(document.querySelector(item.scrollId))" -->
                     <v-list-item-icon class="mx-0 mr-1">
                       <v-icon small>{{ item.icon }}</v-icon>
                     </v-list-item-icon>
@@ -87,7 +88,7 @@ export default {
           expansionPanel: false,
           title: "Information",
           icon: "mdi-google",
-          link: "#",
+          scrollId: "#aaaa",
         },
         {
           expansionPanel: true,
@@ -97,15 +98,15 @@ export default {
             {
               title: "Uses Permissions",
               icon: "mdi-account-key-outline",
-              link: "/b",
+              scrollId: "#bbbb",
             },
             {
               title: "Custom Permissions",
               icon: "mdi-cellphone-key",
-              link: "/c",
+              scrollId: "#cccc",
             },
             // mdi-format-list-bulleted-square
-            { title: "API Permissions", icon: "mdi-folder-key", link: "/d" },
+            { title: "API Permissions", icon: "mdi-folder-key", scrollId: "#dddd" },
           ],
         },
         {
@@ -113,11 +114,11 @@ export default {
           title: "Components",
           icon: "mdi-puzzle-outline",
           items: [
-            { title: "Activities", icon: "mdi-account-key-outline", link: "/e" },
-            { title: "Activity Alias", icon: "mdi-cellphone-key", link: "/f" },
-            { title: "Services", icon: "mdi-folder-key", link: "/g" },
-            { title: "Broadcast Receivers", icon: "mdi-folder-key", link: "/h" },
-            { title: "Content Providers", icon: "mdi-folder-key", link: "/i" },
+            { title: "Activities", icon: "mdi-account-key-outline", scrollId: "#aaaaa" },
+            { title: "Activity Alias", icon: "mdi-cellphone-key", scrollId: "#bbbbb" },
+            { title: "Services", icon: "mdi-folder-key", scrollId: "#ccccc" },
+            { title: "Broadcast Receivers", icon: "mdi-folder-key", scrollId: "#ddddd" },
+            { title: "Content Providers", icon: "mdi-folder-key", scrollId: "#aaaaaa" },
           ],
         },
         {
@@ -128,7 +129,7 @@ export default {
             {
               title: "Broadcast Receiver",
               icon: "mdi-account-key-outline",
-              link: "j",
+              scrollId: "#bbbbbb",
             },
           ],
         },
@@ -136,7 +137,7 @@ export default {
           expansionPanel: false,
           title: "Intent Messages",
           icon: "mdi-file-document-outline",
-          link: "k",
+          scrollId: "#cccccc",
         },
         {
           expansionPanel: true,
@@ -146,12 +147,12 @@ export default {
             {
               title: "Intent spoofing",
               icon: "mdi-account-key-outline",
-              link: "l",
+              scrollId: "#aaaa",
             },
             {
               title: "Unauthorized Intent Receipt",
               icon: "mdi-account-key-outline",
-              link: "m",
+              scrollId: "#aaaa",
             },
           ],
         },
@@ -159,13 +160,13 @@ export default {
           expansionPanel: false,
           title: "PDF Report",
           icon: "mdi-file-document-outline",
-          link: "t",
+          scrollId: "#aaaa",
         },
         {
           expansionPanel: false,
           title: "Link to DevSecOps",
           icon: "mdi-file-document-outline",
-          link: "v",
+          scrollId: "#aaaa",
         },
       ],
       show: true,
@@ -181,6 +182,9 @@ export default {
     onClick() {
       this.$emit("click");
     },
+    scrollToComponent(scrollId){
+      this.$vuetify.goTo(document.querySelector(scrollId))
+    }
   },
 };
 </script>
@@ -213,6 +217,10 @@ export default {
 
 .v-list-item-group .v-list-item--active {
   color: green;
+}
+
+.v-list-item:hover{
+  color: green !important;
 }
 
 .v-list-item--dense .v-list-item__title, .v-list-item--dense .v-list-item__subtitle, .v-list--dense .v-list-item .v-list-item__title, .v-list--dense .v-list-item .v-list-item__subtitle{

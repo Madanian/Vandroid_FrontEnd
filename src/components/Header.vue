@@ -36,7 +36,7 @@
       <router-link to="#" style="color: black">
         <div class="my-0" style="width: 14rem; fontSize: .8rem" v-if="$vuetify.breakpoint.smAndUp">
           VAndroid is a strong tool for analyze the security of mobile applications!
-        </div> 
+        </div>
       </router-link>
 
       <div v-for="leftIcon in leftIcons" :key="leftIcon.id">
@@ -51,7 +51,7 @@
         <router-link
           to="#"
           style="color: black; font-size: 0.9rem"
-          class="mr-3 text-uppercase"
+          class="mr-3 text-uppercase header-text"
           v-if="!isShowSearchBox"
           >About Us</router-link
         >
@@ -59,7 +59,7 @@
         <router-link
           to="#"
           style="color: black; font-size: 0.9rem"
-          class="mr-3 text-uppercase"
+          class="mr-3 text-uppercase header-text"
           v-if="!isShowSearchBox"
           >Contact Us</router-link
         >
@@ -83,6 +83,30 @@
         <v-icon size="21" slot="buttonSlotBefor">mdi-magnify</v-icon>
       </Button>
 
+      <v-menu offset-y transition="fade-transition">
+        <template v-slot:activator="{ attrs, on }">
+          <v-btn plain icon v-bind="attrs" v-on="on">
+            <v-icon size="21">mdi-earth</v-icon>
+          </v-btn>
+        </template>
+        <v-list class="pa-0" v-for="language in languages" :key="language.text">
+          <v-list-item
+            class="pa-0 ma-0 pr-2 pl-1"
+            @click="changeLanguage(language.text)"
+          >
+            <v-list-item-icon class="ma-0 mr-3 my-auto"
+              ><v-icon small color="#475F7B">
+                {{ language.icon }}
+              </v-icon></v-list-item-icon
+            >
+            <v-list-item-title
+              style="font-size: 0.8rem; color: #475f7b"
+              v-text="language.text"
+            ></v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+
       <div v-for="rightIcon in rightIcons" :key="rightIcon.id">
         <Button :to="rightIcon.link" plain icon>
           <v-icon size="21" slot="buttonSlotBefor">{{ rightIcon.name }}</v-icon>
@@ -104,6 +128,10 @@ export default {
   data() {
     return {
       isShowSearchBox: false,
+      languages: [
+        { text: "English", icon: "mdi-flag-variant-outline", link: "#" },
+        { text: "فارسی", icon: "mdi-flag-variant-outline", link: "#" },
+      ],
     };
   },
   props: {
@@ -116,6 +144,13 @@ export default {
   methods: {
     openSearchBox() {
       this.isShowSearchBox = !this.isShowSearchBox;
+    },
+    changeLanguage(language) {
+      if (language == "English") {
+        console.log("english");
+      } else {
+        console.log("farsi");
+      }
     },
     onClick() {
       this.$emit("click");
@@ -137,5 +172,13 @@ export default {
 
 .v-btn--icon.v-size--default:hover {
   color: green;
+}
+
+.header-text:hover {
+  color: black !important;
+  text-decoration: underline;
+  text-decoration-color: green;
+  text-underline-offset: .5rem;
+  text-decoration-thickness: .1rem;
 }
 </style>

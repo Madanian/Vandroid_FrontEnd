@@ -13,6 +13,7 @@
             :to="item.link"
             class="text-uppercase text-caption"
             rel="noopener"
+            style="color:black"
             v-text="item.text"
           ></router-link>
         </v-col>
