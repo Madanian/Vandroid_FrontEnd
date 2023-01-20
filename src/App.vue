@@ -14,7 +14,7 @@ export default {
 <style>
 @import "@/font.css";
 .app {
-  /* font-family: "IranSans"; */
+  font-family: "calibril";
   font-weight: 400;
 }
 

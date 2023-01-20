@@ -3,7 +3,9 @@
     <v-row slot="contentOfCard" no-gutters>
       <v-col cols="6" sm="6" md="6" lg="6">
         <div>
-          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black"> mdi-home-outline </v-icon>
+          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black">
+            mdi-home-outline
+          </v-icon>
           <span style="font-size: 1.1rem"><b>File Information</b></span>
         </div>
 
@@ -15,12 +17,14 @@
             <b>Size: </b>{{ file.size }}
           </div>
           <!-- <div style="font-size: 0.9rem" class="mb-1">MD5: {{ file.MD5 }}</div>
-            <div style="font-size: 0.9rem">sha-256: {{ file.sha }}</div> -->
+              <div style="font-size: 0.9rem">sha-256: {{ file.sha }}</div> -->
         </div>
       </v-col>
       <v-col cols="6" sm="6" md="6" lg="6">
         <div>
-          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black"> mdi-home-outline </v-icon>
+          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black">
+            mdi-home-outline
+          </v-icon>
           <span style="font-size: 1.1rem"><b>App Information</b></span>
         </div>
 
@@ -62,8 +66,8 @@ export default {
   name: "ComponentsCard",
   data() {
     return {
-      cardTitel: "General Information",
-      cardIcon: "mdi-information-outline",
+      cardTitel: "Components",
+      cardIcon: "mdi-puzzle-outline",
 
       file: {
         name: "name",

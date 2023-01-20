@@ -11,7 +11,7 @@
         <img
           src="@/assets/images/vandroid.png"
           width="200px"
-          height="37px"
+          height="106.5px"
           class="my-5 mx-auto"
         />
       </v-list-item>
@@ -19,11 +19,11 @@
 
     <v-divider></v-divider>
 
-    <v-list dense class="ml-3 mr-1 pr-1">
+    <v-list dense class="mx-2">
       <v-list-item-group>
         <div v-for="category in categorys" :key="category.title" class="items">
           <v-list-item
-            :to="category.link"
+            @click="scrollToComponent(category.scrollId)"
             v-if="!category.expansionPanel"
             class="px-1 item-height"
           >
@@ -56,7 +56,11 @@
               </v-expansion-panel-header>
 
               <v-expansion-panel-content :color="color" class="pl-2">
-                <div v-for="item in category.items" :key="item.title" class="item-expansion-hover">
+                <div
+                  v-for="item in category.items"
+                  :key="item.title"
+                  class="item-expansion-hover"
+                >
                   <v-list-item @click="scrollToComponent(item.scrollId)">
                     <!-- @click="$vuetify.goTo(document.querySelector(item.scrollId))" -->
                     <v-list-item-icon class="mx-0 mr-1">
@@ -88,7 +92,7 @@ export default {
           expansionPanel: false,
           title: "Information",
           icon: "mdi-google",
-          scrollId: "#aaaa",
+          scrollId: "#information",
         },
         {
           expansionPanel: true,
@@ -106,7 +110,11 @@ export default {
               scrollId: "#cccc",
             },
             // mdi-format-list-bulleted-square
-            { title: "API Permissions", icon: "mdi-folder-key", scrollId: "#dddd" },
+            {
+              title: "API Permissions",
+              icon: "mdi-folder-key",
+              scrollId: "#dddd",
+            },
           ],
         },
         {
@@ -114,11 +122,27 @@ export default {
           title: "Components",
           icon: "mdi-puzzle-outline",
           items: [
-            { title: "Activities", icon: "mdi-account-key-outline", scrollId: "#aaaaa" },
-            { title: "Activity Alias", icon: "mdi-cellphone-key", scrollId: "#bbbbb" },
+            {
+              title: "Activities",
+              icon: "mdi-account-key-outline",
+              scrollId: "#aaaaa",
+            },
+            {
+              title: "Activity Alias",
+              icon: "mdi-cellphone-key",
+              scrollId: "#bbbbb",
+            },
             { title: "Services", icon: "mdi-folder-key", scrollId: "#ccccc" },
-            { title: "Broadcast Receivers", icon: "mdi-folder-key", scrollId: "#ddddd" },
-            { title: "Content Providers", icon: "mdi-folder-key", scrollId: "#aaaaaa" },
+            {
+              title: "Broadcast Receivers",
+              icon: "mdi-folder-key",
+              scrollId: "#ddddd",
+            },
+            {
+              title: "Content Providers",
+              icon: "mdi-folder-key",
+              scrollId: "#aaaaaa",
+            },
           ],
         },
         {
@@ -182,9 +206,9 @@ export default {
     onClick() {
       this.$emit("click");
     },
-    scrollToComponent(scrollId){
-      this.$vuetify.goTo(document.querySelector(scrollId))
-    }
+    scrollToComponent(scrollId) {
+      this.$vuetify.goTo(document.querySelector(scrollId));
+    },
   },
 };
 </script>
@@ -219,11 +243,14 @@ export default {
   color: green;
 }
 
-.v-list-item:hover{
+.v-list-item:hover {
   color: green !important;
 }
 
-.v-list-item--dense .v-list-item__title, .v-list-item--dense .v-list-item__subtitle, .v-list--dense .v-list-item .v-list-item__title, .v-list--dense .v-list-item .v-list-item__subtitle{
+.v-list-item--dense .v-list-item__title,
+.v-list-item--dense .v-list-item__subtitle,
+.v-list--dense .v-list-item .v-list-item__title,
+.v-list--dense .v-list-item .v-list-item__subtitle {
   font-weight: 400;
 }
 </style>

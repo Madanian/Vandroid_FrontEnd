@@ -1,6 +1,6 @@
 @font-face {
-  font-family: IranSans;
-  src: url('@/assets/fonts/iran-sans-400.ttf');
+  font-family: calibril;
+  src: url('@/assets/fonts/calibri.ttf');
   font-weight: normal;
   font-style: normal;
 }

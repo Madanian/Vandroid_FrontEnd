@@ -14,14 +14,15 @@
         class="mr-3"
       ></v-app-bar-nav-icon>
 
-      <a href="#" title="VAndroid" v-if="!$vuetify.breakpoint.xsOnly">
-        <img
-          src="@/assets/images/vandroid.png"
-          width="100vw"
-          height="18.5vh"
-          class="my-5 mx-auto"
-        />
-      </a>
+      <!-- <div class="my-0" style="width: 14rem; fontSize: .8rem" v-if="$vuetify.breakpoint.smAndUp">
+        Android Intra-App Security Analysis
+      </div> -->
+
+      <router-link to="#" style="color: black" v-if="!$vuetify.breakpoint.xsOnly">
+        <div class="my-0" style="width: 11rem; fontSize: 1.2rem; font-weight: bold">
+          Application Security
+        </div>
+      </router-link>
 
       <v-divider
         v-if="$vuetify.breakpoint.smAndUp"
@@ -29,13 +30,9 @@
         class="mx-3"
       ></v-divider>
 
-      <!-- <div class="my-0" style="width: 14rem; fontSize: .8rem" v-if="$vuetify.breakpoint.smAndUp">
-        VAndroid is a strong tool for analyze the security of mobile applications!
-      </div> -->
-
-      <router-link to="#" style="color: black">
-        <div class="my-0" style="width: 14rem; fontSize: .8rem" v-if="$vuetify.breakpoint.smAndUp">
-          VAndroid is a strong tool for analyze the security of mobile applications!
+      <router-link to="#" style="color: black" v-if="$vuetify.breakpoint.smAndUp">
+        <div class="my-0" style="width: 14rem; fontSize: .8rem">
+          Android Intra-App Security Analysis
         </div>
       </router-link>
 
@@ -167,7 +164,7 @@ export default {
 
 .v-toolbar__content,
 .v-toolbar__extension {
-  padding: 8.5px 7.5px;
+  padding: 8.5px 0px;
 }
 
 .v-btn--icon.v-size--default:hover {

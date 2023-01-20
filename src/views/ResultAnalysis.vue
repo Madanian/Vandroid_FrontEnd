@@ -11,10 +11,11 @@
     ></Header>
     <v-main>
       <div class="mx-8 mt-8 mb-5">
-        <InformationCard></InformationCard>
-        <!-- <ExpansionPanel></ExpansionPanel>
+        <InformationCard id="information"></InformationCard>
+        <!-- <ExpansionPanel class="mt-16"></ExpansionPanel> -->
+        <ComponentsCard class="mt-5"></ComponentsCard>
 
-        <v-expansion-panels class="mb-6" multiple>
+        <!-- <v-expansion-panels class="mb-6" multiple>
           <v-expansion-panel >
             <v-expansion-panel-header expand-icon="mdi-menu-down">
               Item
@@ -36,9 +37,9 @@
               </v-expansion-panels>
             </v-expansion-panel-content>
           </v-expansion-panel>
-        </v-expansion-panels>
+        </v-expansion-panels> -->
 
-        <v-expansion-panels class="mb-6" multiple>
+        <!-- <v-expansion-panels class="mb-6" multiple>
           <v-expansion-panel >
             <v-expansion-panel-header expand-icon="mdi-menu-down">
               Item
@@ -104,13 +105,14 @@ import Header from "@/components/Header.vue";
 import NavigationDrawer from "@/components/NavigationDrawer.vue";
 import ExpansionPanel from "@/components/Basics/ExpansionPanel.vue";
 import InformationCard from "@/components/InformationCard.vue"
+import ComponentsCard from "@/components/ComponentsCard.vue"
 export default {
   name: "ResultAnalysis",
   data() {
     return {
       isShowNav: null,
       // rightIcons: [{ id: 1, name: "mdi-earth", link: "#" }],
-      headerAndNavigationColor: "#f2f4f4",
+      headerAndNavigationColor: "#c2e4ed",
     };
   },
   methods: {
@@ -135,6 +137,7 @@ export default {
     NavigationDrawer,
     ExpansionPanel,
     InformationCard,
+    ComponentsCard,
   },
 };
 </script>
