@@ -11,9 +11,13 @@
     ></Header>
     <v-main>
       <div class="mx-8 mt-8 mb-5">
-        <InformationCard id="information"></InformationCard>
-        <!-- <ExpansionPanel class="mt-16"></ExpansionPanel> -->
-        <ComponentsCard class="mt-5"></ComponentsCard>
+        <InformationCard
+          id="information"
+          :file="file"
+          :app="app"
+        ></InformationCard>
+
+        <ComponentsCard id="components" class="mt-5"></ComponentsCard>
 
         <!-- <v-expansion-panels class="mb-6" multiple>
           <v-expansion-panel >
@@ -103,9 +107,9 @@
 <script>
 import Header from "@/components/Header.vue";
 import NavigationDrawer from "@/components/NavigationDrawer.vue";
-import ExpansionPanel from "@/components/Basics/ExpansionPanel.vue";
-import InformationCard from "@/components/InformationCard.vue"
-import ComponentsCard from "@/components/ComponentsCard.vue"
+import ExpansionPanel from "@/components/Basics/ExpansionPanelTreeLevels.vue";
+import InformationCard from "@/components/InformationCard.vue";
+import ComponentsCard from "@/components/ComponentsCard.vue";
 export default {
   name: "ResultAnalysis",
   data() {
@@ -113,6 +117,24 @@ export default {
       isShowNav: null,
       // rightIcons: [{ id: 1, name: "mdi-earth", link: "#" }],
       headerAndNavigationColor: "#c2e4ed",
+
+      file: {
+        name: "name",
+        size: "size KB",
+        MD5: "MD5",
+        sha: "sha-256",
+      },
+      app: {
+        name: "name",
+        packageName: "packageName",
+        label: "label",
+        icon: "icon",
+        minSdkVersion: "minSdkVersion",
+        targetSdkVersion: "targetSdkVersion",
+        maxSdkVersion: "maxSdkVersion",
+        androidVersionCode: "androidVersionCode",
+        androidVersionName: "androidVersionName",
+      },
     };
   },
   methods: {

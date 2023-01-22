@@ -31,7 +31,7 @@ export default {
 .backColor {
   background-color: #7ec2d1;
 }
-
+/* 7ec2d1 */
 .textColor {
   color: #000000;
 }

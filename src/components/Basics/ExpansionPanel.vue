@@ -1,22 +1,63 @@
 <template>
-  <v-expansion-panels class="mb-6" multiple>
-    <v-expansion-panel v-for="(item, i) in 5" :key="i">
-      <v-expansion-panel-header expand-icon="mdi-menu-down">
-        Item
+  <v-expansion-panels class="result">
+    <v-expansion-panel style="background: #ffffff">
+      <v-expansion-panel-header
+        expand-icon="mdi-menu-down"
+        style="background: #c2e4ed"
+      >
+        <span style="font-size: 1rem"
+          ><b>{{ headerName }}</b></span
+        >
       </v-expansion-panel-header>
-      <v-expansion-panel-content class="pa-4">
-        <v-expansion-panels class="mb-6" multiple>
-          <v-expansion-panel v-for="(item, i) in 5" :key="i">
-            <v-expansion-panel-header expand-icon="mdi-menu-down">
-              Item
-            </v-expansion-panel-header>
-            <v-expansion-panel-content class="pa-4"
-              >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo
-              consequat.</v-expansion-panel-content
+      <v-expansion-panel-content class="pt-4">
+        <v-expansion-panels multiple>
+          <v-expansion-panel v-for="item in items" :key="item.name">
+            <v-expansion-panel-header
+              expand-icon="mdi-menu-down"
+              style="background: #c2e4ed"
             >
+              <div>
+                <v-row>
+                  <v-col cols="12" sm="7" md="7" lg="7">
+                    <span style="font-size: 0.9rem"
+                      ><b>Name: </b>{{ item.name }}</span
+                    >
+                  </v-col>
+
+                  <v-col cols="12" sm="5" md="5" lg="5">
+                    <span style="font-size: 0.9rem">
+                      <b>Exported: </b>
+                      <span
+                        style="color: green; font-size: 1rem"
+                        :class="{ 'false-color': !item.exported }"
+                        >{{
+                          item.exported.toString().charAt(0).toUpperCase() +
+                          item.exported.toString().slice(1)
+                        }}</span
+                      >
+                    </span>
+                  </v-col>
+                </v-row>
+              </div>
+            </v-expansion-panel-header>
+            <v-expansion-panel-content
+              class="pt-4"
+              v-if="item.filters.length != 0"
+            >
+                <v-row>
+                  <v-col cols="12" sm="12" md="6" lg="6">
+                    <span style="font-size: 0.9rem"
+                      ><b>Permission: </b>{{ item.permission }}</span
+                    >
+                  </v-col>
+
+                  <v-col cols="12" sm="12" md="6" lg="6">
+                    <span style="font-size: 0.9rem"
+                      ><b>Authority: </b>{{ item.permission }}</span
+                    >
+                  </v-col>
+                </v-row>
+            </v-expansion-panel-content>
           </v-expansion-panel>
         </v-expansion-panels>
       </v-expansion-panel-content>
@@ -27,5 +68,23 @@
 <script>
 export default {
   name: "ExpansionPanel",
+  data() {
+    return {};
+  },
+  props: {
+    items: Array,
+    headerName: String,
+  },
+  mounted() {},
 };
 </script>
+
+<style>
+.false-color {
+  color: red !important;
+}
+
+.result .v-list-item {
+  min-height: 33px;
+}
+</style>

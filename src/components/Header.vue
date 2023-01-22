@@ -19,7 +19,7 @@
       </div> -->
 
       <router-link to="#" style="color: black" v-if="!$vuetify.breakpoint.xsOnly">
-        <div class="my-0" style="width: 11rem; fontSize: 1.2rem; font-weight: bold">
+        <div class="my-0" style="fontSize: 1.2rem; font-weight: bold">
           Application Security
         </div>
       </router-link>
@@ -31,7 +31,7 @@
       ></v-divider>
 
       <router-link to="#" style="color: black" v-if="$vuetify.breakpoint.smAndUp">
-        <div class="my-0" style="width: 14rem; fontSize: .8rem">
+        <div class="my-0" style="width: 14rem; fontSize: .9rem">
           Android Intra-App Security Analysis
         </div>
       </router-link>
@@ -47,7 +47,7 @@
       <div>
         <router-link
           to="#"
-          style="color: black; font-size: 0.9rem"
+          style="color: black; font-size: 1rem"
           class="mr-3 text-uppercase header-text"
           v-if="!isShowSearchBox"
           >About Us</router-link
@@ -55,7 +55,7 @@
 
         <router-link
           to="#"
-          style="color: black; font-size: 0.9rem"
+          style="color: black; font-size: 1rem"
           class="mr-3 text-uppercase header-text"
           v-if="!isShowSearchBox"
           >Contact Us</router-link
@@ -68,7 +68,7 @@
         filled
         dense
         hide-details
-        color="green"
+        color="#416a73"
         v-if="isShowSearchBox"
       >
         <template class="pa-0 ma-0" v-slot:prepend-inner>

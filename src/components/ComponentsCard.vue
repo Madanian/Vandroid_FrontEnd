@@ -1,67 +1,42 @@
 <template>
   <Card :cardTitel="cardTitel" :cardIcon="cardIcon">
-    <v-row slot="contentOfCard" no-gutters>
-      <v-col cols="6" sm="6" md="6" lg="6">
-        <div>
-          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black">
-            mdi-home-outline
-          </v-icon>
-          <span style="font-size: 1.1rem"><b>File Information</b></span>
-        </div>
+    <div slot="contentOfCard">
+      <ExpansionPanelTreeLevels
+        :items="items"
+        headerName="Activities"
+        class="mb-2"
+      ></ExpansionPanelTreeLevels>
 
-        <div class="ml-10 mt-2">
-          <div style="font-size: 0.9rem" class="mb-1">
-            <b>Name: </b>{{ file.name }}
-          </div>
-          <div style="font-size: 0.9rem" class="mb-1">
-            <b>Size: </b>{{ file.size }}
-          </div>
-          <!-- <div style="font-size: 0.9rem" class="mb-1">MD5: {{ file.MD5 }}</div>
-              <div style="font-size: 0.9rem">sha-256: {{ file.sha }}</div> -->
-        </div>
-      </v-col>
-      <v-col cols="6" sm="6" md="6" lg="6">
-        <div>
-          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black">
-            mdi-home-outline
-          </v-icon>
-          <span style="font-size: 1.1rem"><b>App Information</b></span>
-        </div>
+      <ExpansionPanelTreeLevels
+        :items="items"
+        headerName="Activity Alias"
+        class="mb-2"
+      ></ExpansionPanelTreeLevels>
 
-        <div class="ml-10 mt-2">
-          <div style="font-size: 0.9rem" class="mb-1">
-            <b>Name: </b>{{ app.name }}
-          </div>
-          <div style="font-size: 0.9rem" class="mb-1">
-            <b>Package Name: </b>{{ app.packageName }}
-          </div>
-          <div style="font-size: 0.9rem" class="mb-1">
-            <b>Label: </b>{{ app.label }}
-          </div>
-          <div style="font-size: 0.9rem"><b>Icon: </b>{{ app.icon }}</div>
-          <div style="font-size: 0.9rem">
-            <b>Min SDK Version: </b>{{ app.minSdkVersion }}
-          </div>
-          <div style="font-size: 0.9rem">
-            <b>Target SDK Version: </b>{{ app.targetSdkVersion }}
-          </div>
-          <div style="font-size: 0.9rem">
-            <b>Max SDK Version: </b>{{ app.maxSdkVersion }}
-          </div>
-          <div style="font-size: 0.9rem">
-            <b>Android Version Code: </b>{{ app.androidVersionCode }}
-          </div>
-          <div style="font-size: 0.9rem">
-            <b>Android Version Name: </b>{{ app.androidVersionName }}
-          </div>
-        </div>
-      </v-col>
-    </v-row>
+      <ExpansionPanelTreeLevels
+        :items="items"
+        headerName="Services"
+        class="mb-2"
+      ></ExpansionPanelTreeLevels>
+
+      <ExpansionPanelTreeLevels
+        :items="items"
+        headerName="Broadcast Receivers"
+        class="mb-2"
+      ></ExpansionPanelTreeLevels>
+
+      <ExpansionPanel
+        :items="items2"
+        headerName="Content Providers"
+      ></ExpansionPanel>
+    </div>
   </Card>
 </template>
 
 <script>
 import Card from "@/components/Basics/Card.vue";
+import ExpansionPanelTreeLevels from "@/components/Basics/ExpansionPanelTreeLevels.vue";
+import ExpansionPanel from "@/components/Basics/ExpansionPanel.vue";
 export default {
   name: "ComponentsCard",
   data() {
@@ -69,27 +44,263 @@ export default {
       cardTitel: "Components",
       cardIcon: "mdi-puzzle-outline",
 
-      file: {
-        name: "name",
-        size: "size KB",
-        MD5: "MD5",
-        sha: "sha-256",
-      },
-      app: {
-        name: "name",
-        packageName: "packageName",
-        label: "label",
-        icon: "icon",
-        minSdkVersion: "minSdkVersion",
-        targetSdkVersion: "targetSdkVersion",
-        maxSdkVersion: "maxSdkVersion",
-        androidVersionCode: "androidVersionCode",
-        androidVersionName: "androidVersionName",
-      },
+      items: [
+        {
+          name: "activity-name-1",
+          exported: true,
+          permission: "a string with 50 characters.......................",
+          filterCheck: true,
+          filters: [
+            {
+              id: 1,
+              categoriesCheck: true,
+              actions: [
+                "action-1-1",
+                "action-1-2",
+                "action-1-3",
+                "action-1-4",
+                "action-1-5",
+              ],
+              categories: [
+                "category-1-1",
+                "category-1-2",
+                "category-1-3",
+                "category-1-4",
+                "category-1-5",
+                "category-1-6",
+                "category-1-7",
+              ],
+            },
+            {
+              id: 2,
+              categoriesCheck: true,
+              actions: [
+                "action-1-1",
+                "action-1-2",
+                "action-1-3",
+                "action-1-4",
+                "action-1-5",
+              ],
+              categories: [
+                "category-1-1",
+                "category-1-2",
+                "category-1-3",
+                "category-1-4",
+                "category-1-5",
+                "category-1-6",
+                "category-1-7",
+              ],
+            },
+            {
+              id: 3,
+              categoriesCheck: true,
+              actions: [
+                "action-1-1",
+                "action-1-2",
+                "action-1-3",
+                "action-1-4",
+                "action-1-5",
+              ],
+              categories: [
+                "category-1-1",
+                "category-1-2",
+                "category-1-3",
+                "category-1-4",
+                "category-1-5",
+                "category-1-6",
+                "category-1-7",
+              ],
+            },
+          ],
+        },
+        {
+          name: "activity-name-2",
+          exported: false,
+          permission: "a string with 50 characters.......................",
+          filterCheck: true,
+          filters: [
+            {
+              id: 1,
+              categoriesCheck: true,
+              actions: ["action-2-1", "action-2-2", "action-2-3", "action-2-4"],
+              categories: ["category-2-1", "category-2-2"],
+            },
+          ],
+        },
+        {
+          name: "activity-name-3",
+          exported: true,
+          permission: "a string with 50 characters.......................",
+          filterCheck: true,
+          filters: [
+            {
+              id: 1,
+              categoriesCheck: false,
+              actions: ["action-3-1", "action-3-2"],
+              categories: [],
+            },
+            {
+              id: 2,
+              categoriesCheck: true,
+              actions: ["action-3-1", "action-3-2"],
+              categories: ["category-3-1", "category-3-2"],
+            },
+          ],
+        },
+        {
+          name: "activity-name-4",
+          exported: true,
+          permission: "a string with 50 characters.......................",
+          filterCheck: true,
+          filters: [
+            {
+              id: 1,
+              categoriesCheck: false,
+              actions: ["action-4-1", "action-4-2"],
+              categories: [],
+            },
+          ],
+        },
+        {
+          name: "activity-name-5",
+          exported: false,
+          permission: "a string with 50 characters.......................",
+          filter: false,
+          filters: [],
+        },
+      ],
+
+      items2: [
+        {
+          name: "activity-name-1",
+          exported: true,
+          permission: "a string with 50 characters.......................a string with 50 characters.......................",
+          filterCheck: true,
+          filters: [
+            {
+              id: 1,
+              categoriesCheck: true,
+              actions: [
+                "action-1-1",
+                "action-1-2",
+                "action-1-3",
+                "action-1-4",
+                "action-1-5",
+              ],
+              categories: [
+                "category-1-1",
+                "category-1-2",
+                "category-1-3",
+                "category-1-4",
+                "category-1-5",
+                "category-1-6",
+                "category-1-7",
+              ],
+            },
+            {
+              id: 2,
+              categoriesCheck: true,
+              actions: [
+                "action-1-1",
+                "action-1-2",
+                "action-1-3",
+                "action-1-4",
+                "action-1-5",
+              ],
+              categories: [
+                "category-1-1",
+                "category-1-2",
+                "category-1-3",
+                "category-1-4",
+                "category-1-5",
+                "category-1-6",
+                "category-1-7",
+              ],
+            },
+            {
+              id: 3,
+              categoriesCheck: true,
+              actions: [
+                "action-1-1",
+                "action-1-2",
+                "action-1-3",
+                "action-1-4",
+                "action-1-5",
+              ],
+              categories: [
+                "category-1-1",
+                "category-1-2",
+                "category-1-3",
+                "category-1-4",
+                "category-1-5",
+                "category-1-6",
+                "category-1-7",
+              ],
+            },
+          ],
+        },
+        {
+          name: "activity-name-2",
+          exported: false,
+          permission: "a string with 50 characters.......................",
+          filterCheck: true,
+          filters: [
+            {
+              id: 1,
+              categoriesCheck: true,
+              actions: ["action-2-1", "action-2-2", "action-2-3", "action-2-4"],
+              categories: ["category-2-1", "category-2-2"],
+            },
+          ],
+        },
+        {
+          name: "activity-name-3",
+          exported: true,
+          permission: "a string with 50 characters.......................",
+          filterCheck: true,
+          filters: [
+            {
+              id: 1,
+              categoriesCheck: false,
+              actions: ["action-3-1", "action-3-2"],
+              categories: [],
+            },
+            {
+              id: 2,
+              categoriesCheck: true,
+              actions: ["action-3-1", "action-3-2"],
+              categories: ["category-3-1", "category-3-2"],
+            },
+          ],
+        },
+        {
+          name: "activity-name-4",
+          exported: true,
+          permission: "a string with 50 characters.......................",
+          filterCheck: true,
+          filters: [
+            {
+              id: 1,
+              categoriesCheck: false,
+              actions: ["action-4-1", "action-4-2"],
+              categories: [],
+            },
+          ],
+        },
+        {
+          name: "activity-name-5",
+          exported: false,
+          permission: "a string with 50 characters.......................",
+          filter: false,
+          filters: [],
+        },
+      ],
     };
   },
   components: {
     Card,
+    ExpansionPanelTreeLevels,
+    ExpansionPanel,
   },
 };
 </script>

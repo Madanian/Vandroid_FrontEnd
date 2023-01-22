@@ -3,7 +3,9 @@
     <v-row slot="contentOfCard" no-gutters>
       <v-col cols="6" sm="6" md="6" lg="6">
         <div>
-          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black"> mdi-home-outline </v-icon>
+          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black">
+            mdi-home-outline
+          </v-icon>
           <span style="font-size: 1.1rem"><b>File Information</b></span>
         </div>
 
@@ -20,7 +22,9 @@
       </v-col>
       <v-col cols="6" sm="6" md="6" lg="6">
         <div>
-          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black"> mdi-home-outline </v-icon>
+          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black">
+            mdi-home-outline
+          </v-icon>
           <span style="font-size: 1.1rem"><b>App Information</b></span>
         </div>
 
@@ -59,30 +63,16 @@
 <script>
 import Card from "@/components/Basics/Card.vue";
 export default {
-  name: "ComponentsCard",
+  name: "InformationCard",
   data() {
     return {
       cardTitel: "General Information",
       cardIcon: "mdi-information-outline",
-
-      file: {
-        name: "name",
-        size: "size KB",
-        MD5: "MD5",
-        sha: "sha-256",
-      },
-      app: {
-        name: "name",
-        packageName: "packageName",
-        label: "label",
-        icon: "icon",
-        minSdkVersion: "minSdkVersion",
-        targetSdkVersion: "targetSdkVersion",
-        maxSdkVersion: "maxSdkVersion",
-        androidVersionCode: "androidVersionCode",
-        androidVersionName: "androidVersionName",
-      },
     };
+  },
+  props: {
+    file: Object,
+    app: Object,
   },
   components: {
     Card,

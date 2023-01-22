@@ -5,6 +5,7 @@
     app
     :color="color"
     @click="onClick"
+    class="navigation"
   >
     <v-list>
       <v-list-item>
@@ -125,23 +126,23 @@ export default {
             {
               title: "Activities",
               icon: "mdi-account-key-outline",
-              scrollId: "#aaaaa",
+              scrollId: "#components",
             },
             {
               title: "Activity Alias",
               icon: "mdi-cellphone-key",
-              scrollId: "#bbbbb",
+              scrollId: "#components",
             },
-            { title: "Services", icon: "mdi-folder-key", scrollId: "#ccccc" },
+            { title: "Services", icon: "mdi-folder-key", scrollId: "#components" },
             {
               title: "Broadcast Receivers",
               icon: "mdi-folder-key",
-              scrollId: "#ddddd",
+              scrollId: "#components",
             },
             {
               title: "Content Providers",
               icon: "mdi-folder-key",
-              scrollId: "#aaaaaa",
+              scrollId: "#components",
             },
           ],
         },
@@ -214,43 +215,43 @@ export default {
 </script>
 
 <style>
-.v-expansion-panel--active > .v-expansion-panel-header,
-.v-expansion-panel-header {
+.navigation .v-expansion-panel--active > .v-expansion-panel-header,
+.navigation .v-expansion-panel-header {
   border-radius: 0;
   min-height: 40px;
 }
 
-.v-icon.v-icon {
+.navigation .v-icon.v-icon {
   width: 1.6rem !important;
   height: 1.6rem;
   line-height: 1.6rem;
 }
 
-.v-expansion-panel-content__wrap,
-.items {
+.navigation .v-expansion-panel-content__wrap,
+.navigation .items {
   padding: 3px !important;
 }
 
-.item-expansion-hover {
+.navigation .item-expansion-hover {
   transition-duration: 900ms;
 }
 
-.item-expansion-hover:hover {
+.navigation .item-expansion-hover:hover {
   margin-left: 8px !important;
 }
 
-.v-list-item-group .v-list-item--active {
+.navigation .v-list-item-group .v-list-item--active {
   color: green;
 }
 
-.v-list-item:hover {
+.navigation .v-list-item:hover {
   color: green !important;
 }
 
-.v-list-item--dense .v-list-item__title,
-.v-list-item--dense .v-list-item__subtitle,
-.v-list--dense .v-list-item .v-list-item__title,
-.v-list--dense .v-list-item .v-list-item__subtitle {
+.navigation .v-list-item--dense .v-list-item__title,
+.navigation .v-list-item--dense .v-list-item__subtitle,
+.navigation .v-list--dense .v-list-item .v-list-item__title,
+.navigation .v-list--dense .v-list-item .v-list-item__subtitle {
   font-weight: 400;
 }
 </style>
