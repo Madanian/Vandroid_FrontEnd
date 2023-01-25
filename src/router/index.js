@@ -4,7 +4,7 @@ import ResultAnalysis from '@/views/ResultAnalysis.vue'
 import ChooseApp from '@/views/ChooseApp.vue'
 import Login from "../views/Login.vue";
 import Register from "../views/Signup.vue";
-// import ForgetPassword from "../views/ForgetPassword.vue";
+import ForgetPassword from "../views/ForgetPassword.vue";
 
 Vue.use(VueRouter)
 
@@ -29,11 +29,11 @@ const routes = [
     name: "register",
     component: Register,
   },
-  // {
-  //   path: "/forgetPassword",
-  //   name: "forgetPassword",
-  //   component: ForgetPassword,
-  // },
+  {
+    path: "/forgetPassword",
+    name: "forgetPassword",
+    component: ForgetPassword,
+  },
 ]
 
 const router = new VueRouter({
