@@ -16,10 +16,12 @@
           :information="generalInformation"
         ></InformationCard>
 
+        <PermissionCard id="permissions" class="mt-5"></PermissionCard>
+
         <ComponentsCard id="components" class="mt-5"></ComponentsCard>
 
         <DynamicRegisteredComponentsCard
-          id="dynamicRegisteredComponentsCard"
+          id="dynamicRegisteredComponents"
           class="mt-5"
         ></DynamicRegisteredComponentsCard>
       </div>
@@ -35,6 +37,7 @@ import ExpansionPanel from "@/components/Basics/ExpansionPanelTreeLevels.vue";
 import InformationCard from "@/components/InformationCard.vue";
 import ComponentsCard from "@/components/ComponentsCard.vue";
 import DynamicRegisteredComponentsCard from "@/components/DynamicRegisteredComponentsCard.vue";
+import PermissionCard from "@/components/PermissionCard.vue";
 export default {
   name: "ResultAnalysis",
   data() {
@@ -67,6 +70,7 @@ export default {
     InformationCard,
     ComponentsCard,
     DynamicRegisteredComponentsCard,
+    PermissionCard,
   },
   beforeMount() {
     this.$store.dispatch("showGeneralInformation");
@@ -75,7 +79,12 @@ export default {
     this.$store.dispatch("showBroadcastReceiversComponent");
     this.$store.dispatch("showServicesComponent");
     this.$store.dispatch("showContentProvidersComponent");
+
     this.$store.dispatch("showDynamicRegisteredComponent");
+
+    this.$store.dispatch("showUsesPermissionCard");
+    this.$store.dispatch("showCustomPermissionCard");
+    this.$store.dispatch("showAPIPermissionCard");
   },
   mounted() {
     // console.log(this.generalInformation);

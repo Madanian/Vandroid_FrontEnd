@@ -75,6 +75,33 @@ export default {
   },
 
 
+  async showUsesPermissionCard({ commit }) {
+    const usesPermissionCardData = await axios.get(
+      `http://127.0.0.1:8000/usesPermission/`
+    );
+    let usesPermission = usesPermissionCardData.data;
+    //console.log(dynamicRegisteredComponent)
+    commit("setUsesPermissionCard", usesPermission);
+  },
+
+  async showCustomPermissionCard({ commit }) {
+    const customPermissionCardData = await axios.get(
+      `http://127.0.0.1:8000/customPermission/`
+    );
+    let customPermission = customPermissionCardData.data;
+    //console.log(dynamicRegisteredComponent)
+    commit("setCustomPermissionCard", customPermission);
+  },
+
+  async showAPIPermissionCard({ commit }) {
+    const APIPermissionCardData = await axios.get(
+      `http://127.0.0.1:8000/APIPermission/`
+    );
+    let APIPermission = APIPermissionCardData.data;
+    //console.log(dynamicRegisteredComponent)
+    commit("setAPIPermissionCard", APIPermission);
+  },
+
   async addData({ commit }, nameAppPass) {
     await axios
       .post(`http://127.0.0.1:8000/information/`, {

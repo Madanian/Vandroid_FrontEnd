@@ -7,4 +7,7 @@ export default {
   servicesComponent: [],
   contentProvidersComponent: [],
   dynamicRegisteredComponent: [],
+  usesPermission: [],
+  customPermission: [],
+  APIpermission: [],
 };

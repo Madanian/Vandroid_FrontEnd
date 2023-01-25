@@ -35,18 +35,13 @@
                     sm="5"
                     md="5"
                     lg="5"
-                    v-if="!(item.exported === '') && !(item.exported === null)"
+                    v-if="!(item.status === '') && !(item.status === null)"
                   >
                     <span style="font-size: 0.9rem">
-                      <b>Exported: </b>
-                      <span
-                        style="color: green; font-size: 1rem"
-                        :class="{ 'false-color': !item.exported }"
-                        >{{
-                          item.exported.toString().charAt(0).toUpperCase() +
-                          item.exported.toString().slice(1)
-                        }}</span
-                      >
+                      <b>Status: </b>
+                      <span style="color: green; font-size: 1rem">{{
+                        item.status
+                      }}</span>
                     </span>
                   </v-col>
                 </v-row>
@@ -59,13 +54,10 @@
                   sm="12"
                   md="6"
                   lg="6"
-                  v-if="
-                    !(item.permissionName == '') &&
-                    !(item.permissionName == null)
-                  "
+                  v-if="!(item.info == '') && !(item.info == null)"
                 >
                   <span style="font-size: 0.9rem"
-                    ><b>Permission: </b>{{ item.permissionName }}</span
+                    ><b>Information: </b>{{ item.info }}</span
                   >
                 </v-col>
 
@@ -74,10 +66,12 @@
                   sm="12"
                   md="6"
                   lg="6"
-                  v-if="!(item.Authority == '') && !(item.Authority == null)"
+                  v-if="
+                    !(item.description == '') && !(item.description == null)
+                  "
                 >
                   <span style="font-size: 0.9rem"
-                    ><b>Authority: </b>{{ item.Authority }}</span
+                    ><b>Description: </b>{{ item.description }}</span
                   >
                 </v-col>
               </v-row>
@@ -91,7 +85,7 @@
 
 <script>
 export default {
-  name: "ExpansionPanelComponent",
+  name: "ExpansionPanelPermission",
   data() {
     return {};
   },

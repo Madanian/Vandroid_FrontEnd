@@ -108,18 +108,18 @@ export default {
             {
               title: "Uses Permissions",
               icon: "mdi-account-key-outline",
-              scrollId: "#bbbb",
+              scrollId: "#permissions",
             },
             {
               title: "Custom Permissions",
               icon: "mdi-cellphone-key",
-              scrollId: "#cccc",
+              scrollId: "#permissions",
             },
             // mdi-format-list-bulleted-square
             {
               title: "API Permissions",
               icon: "mdi-folder-key",
-              scrollId: "#dddd",
+              scrollId: "#permissions",
             },
           ],
         },
@@ -163,7 +163,7 @@ export default {
             {
               title: "Broadcast Receiver",
               icon: "mdi-account-key-outline",
-              scrollId: "#dynamicRegisteredComponentsCard",
+              scrollId: "#dynamicRegisteredComponents",
             },
           ],
         },
