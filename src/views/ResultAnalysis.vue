@@ -24,6 +24,8 @@
           id="dynamicRegisteredComponents"
           class="mt-5"
         ></DynamicRegisteredComponentsCard>
+
+        <IntentMessageCard id="intentMessage" class="mt-5"></IntentMessageCard>
       </div>
     </v-main>
   </div>
@@ -33,11 +35,12 @@
 import { mapState } from "vuex";
 import Header from "@/components/Header.vue";
 import NavigationDrawer from "@/components/NavigationDrawer.vue";
-import ExpansionPanel from "@/components/Basics/ExpansionPanelTreeLevels.vue";
-import InformationCard from "@/components/InformationCard.vue";
-import ComponentsCard from "@/components/ComponentsCard.vue";
-import DynamicRegisteredComponentsCard from "@/components/DynamicRegisteredComponentsCard.vue";
-import PermissionCard from "@/components/PermissionCard.vue";
+import ExpansionPanel from "@/components/Basics/expansionPanel/ExpansionPanelTreeLevels.vue";
+import InformationCard from "@/components/analysisCards/InformationCard.vue";
+import ComponentsCard from "@/components/analysisCards/ComponentsCard.vue";
+import DynamicRegisteredComponentsCard from "@/components/analysisCards/DynamicRegisteredComponentsCard.vue";
+import PermissionCard from "@/components/analysisCards/PermissionCard.vue";
+import IntentMessageCard from "@/components/analysisCards/IntentMessageCard.vue";
 export default {
   name: "ResultAnalysis",
   data() {
@@ -71,23 +74,10 @@ export default {
     ComponentsCard,
     DynamicRegisteredComponentsCard,
     PermissionCard,
+    IntentMessageCard,
   },
   beforeMount() {
-    this.$store.dispatch("showGeneralInformation");
-    this.$store.dispatch("showActivityComponent");
-    this.$store.dispatch("showActivityAliasComponent");
-    this.$store.dispatch("showBroadcastReceiversComponent");
-    this.$store.dispatch("showServicesComponent");
-    this.$store.dispatch("showContentProvidersComponent");
-
-    this.$store.dispatch("showDynamicRegisteredComponent");
-
-    this.$store.dispatch("showUsesPermissionCard");
-    this.$store.dispatch("showCustomPermissionCard");
-    this.$store.dispatch("showAPIPermissionCard");
-  },
-  mounted() {
-    // console.log(this.generalInformation);
+    this.$store.dispatch("showData");
   },
 };
 </script>

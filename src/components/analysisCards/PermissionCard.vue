@@ -25,7 +25,7 @@
 <script>
 import { mapState } from "vuex";
 import Card from "@/components/Basics/Card.vue";
-import ExpansionPanelPermission from "@/components/Basics/ExpansionPanelPermission.vue";
+import ExpansionPanelPermission from "@/components/Basics/expansionPanel/ExpansionPanelPermission.vue";
 export default {
   name: "PermissionCard",
   data() {
@@ -42,9 +42,6 @@ export default {
     ...mapState(["usesPermission"]),
     ...mapState(["customPermission"]),
     ...mapState(["APIpermission"]),
-  },
-  mounted() {
-    console.log(this.dynamicRegisteredComponent);
   },
 };
 </script>

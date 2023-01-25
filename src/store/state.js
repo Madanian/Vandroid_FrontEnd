@@ -10,4 +10,5 @@ export default {
   usesPermission: [],
   customPermission: [],
   APIpermission: [],
+  intentMessage: [],
 };

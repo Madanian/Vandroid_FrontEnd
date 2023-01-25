@@ -1,136 +1,130 @@
 <template>
-<card-with-image>
-  <div slot="rightPart">
-    <v-toolbar class="elevation-0">
-      <v-toolbar-title
-        class="mx-auto"
-        style="font-size: 1.47rem; font-weight: 400"
-        >Register</v-toolbar-title
-      >
-    </v-toolbar>
-
-    <v-form @submit.prevent="onSubmit" ref="form">
-      <v-row class="mb-2 mt-4 justify-space-between">
-        <v-col cols="12" sm="12" md="6">
-          <Input
-            outlined
-            dense
-            name="firstname"
-            type="text"
-            v-model.trim="formData.firstname"
-            labelTag
-            labelText="First Name"
-            placeholder="First Name"
-            hide_details
-            class="mb-2"
-          />
-        </v-col>
-
-        <v-col cols="12" sm="12" md="6">
-          <Input
-            outlined
-            dense
-            name="lastname"
-            type="text"
-            v-model.trim="formData.lastname"
-            labelTag
-            labelText="Last Name"
-            placeholder="Last Name"
-            hide_details
-            class="mb-2"
-          />
-        </v-col>
-
-        <v-col cols="12" sm="12" md="6">
-          <Input
-            outlined
-            dense
-            name="email"
-            type="text"
-            v-model.trim="formData.email"
-            labelTag
-            labelText="Email Address"
-            placeholder="Email Address"
-            hide_details
-            class="mb-2"
-          />
-        </v-col>
-
-        <v-col cols="12" sm="12" md="6">
-          <Input
-            outlined
-            dense
-            name="tell"
-            type="number"
-            v-model.trim="formData.tell"
-            labelTag
-            labelText="Phone Number"
-            placeholder="Phone Number"
-            hide_details
-            class="mb-2"
-          />
-        </v-col>
-
-        <v-col cols="12" sm="12" md="12">
-          <Input
-            outlined
-            dense
-            name="password"
-            type="password"
-            v-model.trim="formData.password"
-            labelTag
-            labelText="Password"
-            placeholder="Password"
-            hint="At Least 8 Characters"
-            class="mb-n2"
-          />
-        </v-col>
-        <v-col cols="12" sm="12" md="12">
-          <Input
-            outlined
-            dense
-            name="password"
-            type="password"
-            v-model.trim="formData.rePassword"
-            labelTag
-            labelText="Confirm Password"
-            placeholder="Confirm Password"
-            hint="At Least 8 Characters"
-            class="mb-n2"
-          />
-        </v-col>
-
-        <v-col cols="12" sm="12" md="12">
-          <Button
-            input_value="Register"
-            type="submit"
-            color="#7ec2d1"
-            block
-            large
-            class="my-2"
-          >
-          </Button>
-        </v-col>
-      </v-row>
-    </v-form>
-
-    <v-divider class="mb-5"></v-divider>
-
-    <p class="text-center text--secondary">
-      <small>Do have an account?</small>
-      <small>
-        <a
-          href="/login"
-          style="color: #7ec2d1"
-          title="Login"
+  <card-with-image>
+    <div slot="rightPart">
+      <v-toolbar class="elevation-0">
+        <v-toolbar-title
+          class="mx-auto"
+          style="font-size: 1.47rem; font-weight: 400"
+          >Register</v-toolbar-title
         >
-          Login
-        </a>
-        <!-- <small style="display:inline"> <router-link to='/login'>ورود</router-link> </small> -->
-      </small>
-    </p>
-  </div>
-</card-with-image>
+      </v-toolbar>
+
+      <v-form @submit.prevent="onSubmit" ref="form">
+        <v-row class="mb-2 mt-4 justify-space-between">
+          <v-col cols="12" sm="12" md="6">
+            <Input
+              outlined
+              dense
+              name="firstname"
+              type="text"
+              v-model.trim="formData.firstname"
+              labelTag
+              labelText="First Name"
+              placeholder="First Name"
+              hide_details
+              class="mb-2"
+            />
+          </v-col>
+
+          <v-col cols="12" sm="12" md="6">
+            <Input
+              outlined
+              dense
+              name="lastname"
+              type="text"
+              v-model.trim="formData.lastname"
+              labelTag
+              labelText="Last Name"
+              placeholder="Last Name"
+              hide_details
+              class="mb-2"
+            />
+          </v-col>
+
+          <v-col cols="12" sm="12" md="6">
+            <Input
+              outlined
+              dense
+              name="email"
+              type="text"
+              v-model.trim="formData.email"
+              labelTag
+              labelText="Email Address"
+              placeholder="Email Address"
+              hide_details
+              class="mb-2"
+            />
+          </v-col>
+
+          <v-col cols="12" sm="12" md="6">
+            <Input
+              outlined
+              dense
+              name="tell"
+              type="number"
+              v-model.trim="formData.tell"
+              labelTag
+              labelText="Phone Number"
+              placeholder="Phone Number"
+              hide_details
+              class="mb-2"
+            />
+          </v-col>
+
+          <v-col cols="12" sm="12" md="12">
+            <Input
+              outlined
+              dense
+              name="password"
+              type="password"
+              v-model.trim="formData.password"
+              labelTag
+              labelText="Password"
+              placeholder="Password"
+              hint="At Least 8 Characters"
+              class="mb-n2"
+            />
+          </v-col>
+          <v-col cols="12" sm="12" md="12">
+            <Input
+              outlined
+              dense
+              name="password"
+              type="password"
+              v-model.trim="formData.rePassword"
+              labelTag
+              labelText="Confirm Password"
+              placeholder="Confirm Password"
+              hint="At Least 8 Characters"
+              class="mb-n2"
+            />
+          </v-col>
+
+          <v-col cols="12" sm="12" md="12">
+            <Button
+              input_value="Register"
+              type="submit"
+              color="#7ec2d1"
+              block
+              large
+              class="my-2"
+            >
+            </Button>
+          </v-col>
+        </v-row>
+      </v-form>
+
+      <v-divider class="mb-5"></v-divider>
+
+      <p class="text-center text--secondary">
+        <small>Do have an account?</small>
+        <small>
+          <a href="/login" style="color: #7ec2d1" title="Login"> Login </a>
+          <!-- <small style="display:inline"> <router-link to='/login'>ورود</router-link> </small> -->
+        </small>
+      </p>
+    </div>
+  </card-with-image>
 </template>
 
 <script>

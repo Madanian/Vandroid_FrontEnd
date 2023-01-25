@@ -23,10 +23,10 @@ export default {
   props: {
     items: Array,
   },
-  methods:{
-    passSelectedItems(){
-        this.$emit("selectedItems", this.select)
-    }
-  }
+  methods: {
+    passSelectedItems() {
+      this.$emit("selectedItems", this.select);
+    },
+  },
 };
 </script>

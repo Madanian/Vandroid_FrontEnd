@@ -5,7 +5,7 @@
         <v-toolbar-title
           class="mx-auto"
           style="font-size: 1.47rem; font-weight: 400"
-          >رمز عبورتان را فراموش کرده اید؟</v-toolbar-title
+          >Forgot your password?</v-toolbar-title
         >
       </v-toolbar>
 

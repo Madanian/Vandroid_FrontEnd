@@ -39,9 +39,7 @@
                   >
                     <span style="font-size: 0.9rem">
                       <b>Status: </b>
-                      <span style="color: green; font-size: 1rem">{{
-                        item.status
-                      }}</span>
+                      <span style="font-size: 1rem">{{ item.status }}</span>
                     </span>
                   </v-col>
                 </v-row>
@@ -52,8 +50,8 @@
                 <v-col
                   cols="12"
                   sm="12"
-                  md="6"
-                  lg="6"
+                  md="12"
+                  lg="12"
                   v-if="!(item.info == '') && !(item.info == null)"
                 >
                   <span style="font-size: 0.9rem"
@@ -64,8 +62,8 @@
                 <v-col
                   cols="12"
                   sm="12"
-                  md="6"
-                  lg="6"
+                  md="12"
+                  lg="12"
                   v-if="
                     !(item.description == '') && !(item.description == null)
                   "
@@ -98,10 +96,6 @@ export default {
 </script>
 
 <style>
-.false-color {
-  color: red !important;
-}
-
 .result .v-list-item {
   min-height: 33px;
 }

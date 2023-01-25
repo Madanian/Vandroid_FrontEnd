@@ -65,7 +65,6 @@
                   class="item-expansion-hover"
                 >
                   <v-list-item @click="scrollToComponent(item.scrollId)">
-                    <!-- @click="$vuetify.goTo(document.querySelector(item.scrollId))" -->
                     <v-list-item-icon class="mx-0 mr-1">
                       <v-icon small class="hover-color">{{ item.icon }}</v-icon>
                     </v-list-item-icon>
@@ -115,7 +114,6 @@ export default {
               icon: "mdi-cellphone-key",
               scrollId: "#permissions",
             },
-            // mdi-format-list-bulleted-square
             {
               title: "API Permissions",
               icon: "mdi-folder-key",
@@ -171,37 +169,37 @@ export default {
           expansionPanel: false,
           title: "Intent Messages",
           icon: "mdi-message-text-outline",
-          scrollId: "#cccccc",
+          scrollId: "#intentMessage",
         },
-        {
-          expansionPanel: true,
-          title: "Security Analysis Reports",
-          icon: "mdi-security",
-          items: [
-            {
-              title: "Intent spoofing",
-              icon: "mdi-login-variant",
-              scrollId: "#aaaa",
-            },
-            {
-              title: "Unauthorized Intent Receipt",
-              icon: "mdi-exclamation",
-              scrollId: "#aaaa",
-            },
-          ],
-        },
-        {
-          expansionPanel: false,
-          title: "PDF Report",
-          icon: "mdi-file-document-outline",
-          scrollId: "#aaaa",
-        },
-        {
-          expansionPanel: false,
-          title: "Link to DevSecOps",
-          icon: "mdi-dialpad",
-          scrollId: "#aaaa",
-        },
+        // {
+        //   expansionPanel: true,
+        //   title: "Security Analysis Reports",
+        //   icon: "mdi-security",
+        //   items: [
+        //     {
+        //       title: "Intent spoofing",
+        //       icon: "mdi-login-variant",
+        //       scrollId: "#aaaa",
+        //     },
+        //     {
+        //       title: "Unauthorized Intent Receipt",
+        //       icon: "mdi-exclamation",
+        //       scrollId: "#aaaa",
+        //     },
+        //   ],
+        // },
+        // {
+        //   expansionPanel: false,
+        //   title: "PDF Report",
+        //   icon: "mdi-file-document-outline",
+        //   scrollId: "#aaaa",
+        // },
+        // {
+        //   expansionPanel: false,
+        //   title: "Link to DevSecOps",
+        //   icon: "mdi-dialpad",
+        //   scrollId: "#aaaa",
+        // },
       ],
       show: true,
       expand: false,

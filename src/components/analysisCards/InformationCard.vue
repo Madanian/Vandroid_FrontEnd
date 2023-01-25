@@ -16,7 +16,6 @@
           <div style="font-size: 0.9rem" class="mb-1">
             <b>Size: </b>{{ information.file_size }}
           </div>
-          
         </div>
       </v-col>
       <v-col cols="12" sm="6" md="6" lg="6">
@@ -37,7 +36,9 @@
           <div style="font-size: 0.9rem" class="mb-1">
             <b>Label: </b>{{ information.app_lable }}
           </div>
-          <div style="font-size: 0.9rem"><b>Icon: </b>{{ information.app_icon }}</div>
+          <div style="font-size: 0.9rem">
+            <b>Icon: </b>{{ information.app_icon }}
+          </div>
           <div style="font-size: 0.9rem">
             <b>Min SDK Version: </b>{{ information.app_MinSDKVersion }}
           </div>
@@ -48,10 +49,12 @@
             <b>Max SDK Version: </b>{{ information.app_MaxSDKVersion }}
           </div>
           <div style="font-size: 0.9rem">
-            <b>Android Version Code: </b>{{ information.app_AndroidVersionCode }}
+            <b>Android Version Code: </b
+            >{{ information.app_AndroidVersionCode }}
           </div>
           <div style="font-size: 0.9rem">
-            <b>Android Version Name: </b>{{ information.app_AndroidVersionName }}
+            <b>Android Version Name: </b
+            >{{ information.app_AndroidVersionName }}
           </div>
         </div>
       </v-col>

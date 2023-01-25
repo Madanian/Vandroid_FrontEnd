@@ -94,10 +94,10 @@ export default {
     onKeyupEnter() {
       this.$emit("keyup");
     },
-    onKeydown(){
+    onKeydown() {
       this.$emit("keydown");
     },
-    onKeyup(){
+    onKeyup() {
       this.$emit("keyup");
     },
   },
@@ -105,7 +105,9 @@ export default {
 </script>
 
 <style>
-.theme--light.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state)
+.theme--light.v-text-field--outlined:not(.v-input--is-focused):not(
+    .v-input--has-state
+  )
   > .v-input__control
   > .v-input__slot
   fieldset {

@@ -1,23 +1,23 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import ResultAnalysis from '@/views/ResultAnalysis.vue'
-import ChooseApp from '@/views/ChooseApp.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import ResultAnalysis from "@/views/ResultAnalysis.vue";
+import ChooseApp from "@/views/ChooseApp.vue";
 import Login from "../views/Login.vue";
 import Register from "../views/Signup.vue";
 import ForgetPassword from "../views/ForgetPassword.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/app-analysis',
-    name: 'resultAnalysis',
-    component: ResultAnalysis
+    path: "/app-analysis",
+    name: "resultAnalysis",
+    component: ResultAnalysis,
   },
   {
-    path: '/choose-app',
-    name: 'chooseApp',
-    component: ChooseApp
+    path: "/choose-app",
+    name: "chooseApp",
+    component: ChooseApp,
   },
   {
     path: "/login",
@@ -34,12 +34,12 @@ const routes = [
     name: "forgetPassword",
     component: ForgetPassword,
   },
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

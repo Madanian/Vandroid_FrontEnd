@@ -12,7 +12,6 @@ export default {
     commit("setGeneralInformation", generalInformation);
   },
 
-
   async showActivityComponent({ commit }) {
     // let config = {
     //   headers: {
@@ -74,48 +73,63 @@ export default {
     commit("setDynamicRegisteredComponent", dynamicRegisteredComponent);
   },
 
-
-  async showUsesPermissionCard({ commit }) {
-    const usesPermissionCardData = await axios.get(
+  async showUsesPermission({ commit }) {
+    const usesPermissionData = await axios.get(
       `http://127.0.0.1:8000/usesPermission/`
     );
-    let usesPermission = usesPermissionCardData.data;
+    let usesPermission = usesPermissionData.data;
     //console.log(dynamicRegisteredComponent)
-    commit("setUsesPermissionCard", usesPermission);
+    commit("setUsesPermission", usesPermission);
   },
 
-  async showCustomPermissionCard({ commit }) {
-    const customPermissionCardData = await axios.get(
+  async showCustomPermission({ commit }) {
+    const customPermissionData = await axios.get(
       `http://127.0.0.1:8000/customPermission/`
     );
-    let customPermission = customPermissionCardData.data;
+    let customPermission = customPermissionData.data;
     //console.log(dynamicRegisteredComponent)
-    commit("setCustomPermissionCard", customPermission);
+    commit("setCustomPermission", customPermission);
   },
 
-  async showAPIPermissionCard({ commit }) {
-    const APIPermissionCardData = await axios.get(
+  async showAPIPermission({ commit }) {
+    const APIPermissionData = await axios.get(
       `http://127.0.0.1:8000/APIPermission/`
     );
-    let APIPermission = APIPermissionCardData.data;
+    let APIPermission = APIPermissionData.data;
     //console.log(dynamicRegisteredComponent)
-    commit("setAPIPermissionCard", APIPermission);
+    commit("setAPIPermission", APIPermission);
+  },
+
+  async showIntentMessage({ commit }) {
+    const intentMessageData = await axios.get(
+      `http://127.0.0.1:8000/intentMessages/`
+    );
+    let intentMessage = intentMessageData.data;
+    //console.log(dynamicRegisteredComponent)
+    commit("setIntentMessage", intentMessage);
+  },
+
+  showData: ({ commit, dispatch }) => {
+    dispatch("showGeneralInformation");
+    dispatch("showActivityComponent");
+    dispatch("showActivityAliasComponent");
+    dispatch("showBroadcastReceiversComponent");
+    dispatch("showServicesComponent");
+    dispatch("showContentProvidersComponent");
+    dispatch("showDynamicRegisteredComponent");
+    dispatch("showUsesPermission");
+    dispatch("showCustomPermission");
+    dispatch("showAPIPermission");
+    dispatch("showIntentMessage");
   },
 
   async addData({ commit }, nameAppPass) {
     await axios
       .post(`http://127.0.0.1:8000/information/`, {
         nameApp: nameAppPass,
-        // title: data.title,
-        // body: data.body,
-        // userId: data.userId,
       })
       .then((response) => {
-        // let infoData = response.data;
-        // commit("addAxiosData", infoData);
-        console.log(response.data)
+        console.log(response.data);
       });
-
-    //router.push("/axios/get");
   },
 };

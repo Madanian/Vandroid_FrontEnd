@@ -35,18 +35,11 @@
                     sm="5"
                     md="5"
                     lg="5"
-                    v-if="!(item.exported === '') && !(item.exported === null)"
+                    v-if="!(item.type === '') && !(item.type === null)"
                   >
                     <span style="font-size: 0.9rem">
-                      <b>Exported: </b>
-                      <span
-                        style="color: green; font-size: 1rem"
-                        :class="{ 'false-color': !item.exported }"
-                        >{{
-                          item.exported.toString().charAt(0).toUpperCase() +
-                          item.exported.toString().slice(1)
-                        }}</span
-                      >
+                      <b>Type: </b>
+                      <span style="font-size: 1rem">{{ item.type }}</span>
                     </span>
                   </v-col>
                 </v-row>
@@ -57,27 +50,42 @@
                 <v-col
                   cols="12"
                   sm="12"
-                  md="6"
-                  lg="6"
-                  v-if="
-                    !(item.permissionName == '') &&
-                    !(item.permissionName == null)
-                  "
+                  md="12"
+                  lg="12"
+                  v-if="!(item.permission == '') && !(item.permission == null)"
                 >
                   <span style="font-size: 0.9rem"
-                    ><b>Permission: </b>{{ item.permissionName }}</span
+                    ><b>Permission: </b>{{ item.permission }}</span
                   >
                 </v-col>
 
                 <v-col
                   cols="12"
                   sm="12"
-                  md="6"
-                  lg="6"
-                  v-if="!(item.Authority == '') && !(item.Authority == null)"
+                  md="12"
+                  lg="12"
+                  v-if="
+                    !(item.senderComponent == '') &&
+                    !(item.senderComponent == null)
+                  "
                 >
                   <span style="font-size: 0.9rem"
-                    ><b>Authority: </b>{{ item.Authority }}</span
+                    ><b>SenderComponent: </b>{{ item.senderComponent }}</span
+                  >
+                </v-col>
+
+                <v-col
+                  cols="12"
+                  sm="12"
+                  md="12"
+                  lg="12"
+                  v-if="
+                    !(item.targetComponent == '') &&
+                    !(item.targetComponent == null)
+                  "
+                >
+                  <span style="font-size: 0.9rem"
+                    ><b>TargetComponent: </b>{{ item.targetComponent }}</span
                   >
                 </v-col>
               </v-row>
@@ -91,7 +99,7 @@
 
 <script>
 export default {
-  name: "ExpansionPanelComponent",
+  name: "ExpansionPanelIntentMessage",
   data() {
     return {};
   },
@@ -104,10 +112,6 @@ export default {
 </script>
 
 <style>
-.false-color {
-  color: red !important;
-}
-
 .result .v-list-item {
   min-height: 33px;
 }

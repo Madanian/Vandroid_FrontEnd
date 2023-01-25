@@ -13,8 +13,8 @@
 <script>
 import { mapState } from "vuex";
 import Card from "@/components/Basics/Card.vue";
-import ExpansionPanelTreeLevels from "@/components/Basics/ExpansionPanelTreeLevels.vue";
-import ExpansionPanel from "@/components/Basics/ExpansionPanelComponent.vue";
+import ExpansionPanelTreeLevels from "@/components/Basics/expansionPanel/ExpansionPanelTreeLevels.vue";
+import ExpansionPanel from "@/components/Basics/expansionPanel/ExpansionPanelComponent.vue";
 export default {
   name: "DynamicRegisteredComponentsCard",
   data() {
@@ -30,9 +30,6 @@ export default {
   },
   computed: {
     ...mapState(["dynamicRegisteredComponent"]),
-  },
-  mounted() {
-    console.log(this.dynamicRegisteredComponent);
   },
 };
 </script>

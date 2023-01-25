@@ -1,6 +1,6 @@
 export default {
   setGeneralInformation(state, infoData) {
-    state.generalInformation = infoData[0]
+    state.generalInformation = infoData[0];
     // console.log(state.generalInformation)
   },
 
@@ -29,16 +29,20 @@ export default {
     state.dynamicRegisteredComponent = infoData;
   },
 
-  setUsesPermissionCard(state, infoData) {
+  setUsesPermission(state, infoData) {
     state.usesPermission = infoData;
   },
 
-  setCustomPermissionCard(state, infoData) {
+  setCustomPermission(state, infoData) {
     state.customPermission = infoData;
   },
 
-  setAPIPermissionCard(state, infoData) {
+  setAPIPermission(state, infoData) {
     state.APIpermission = infoData;
+  },
+
+  setIntentMessage(state, infoData) {
+    state.intentMessage = infoData;
   },
 
   // addAxiosData(state, data) {
