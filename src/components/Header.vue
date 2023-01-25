@@ -68,7 +68,7 @@
         filled
         dense
         hide-details
-        color="#416a73"
+        color="#60740a"
         v-if="isShowSearchBox"
       >
         <template class="pa-0 ma-0" v-slot:prepend-inner>
@@ -88,16 +88,16 @@
         </template>
         <v-list class="pa-0" v-for="language in languages" :key="language.text">
           <v-list-item
-            class="pa-0 ma-0 pr-2 pl-1"
+            class="pa-0 ma-0 pr-4 pl-3"
             @click="changeLanguage(language.text)"
           >
-            <v-list-item-icon class="ma-0 mr-3 my-auto"
-              ><v-icon small color="#475F7B">
+            <v-list-item-icon class="ma-0 mr-1 my-auto"
+              ><v-icon small color="black">
                 {{ language.icon }}
               </v-icon></v-list-item-icon
             >
             <v-list-item-title
-              style="font-size: 0.8rem; color: #475f7b"
+              style="font-size: 0.8rem; color: black"
               v-text="language.text"
             ></v-list-item-title>
           </v-list-item>
@@ -168,13 +168,13 @@ export default {
 }
 
 .v-btn--icon.v-size--default:hover {
-  color: green;
+  color: #60740a;
 }
 
 .header-text:hover {
   color: black !important;
   text-decoration: underline;
-  text-decoration-color: green;
+  text-decoration-color: #60740a;
   text-underline-offset: .5rem;
   text-decoration-thickness: .1rem;
 }
