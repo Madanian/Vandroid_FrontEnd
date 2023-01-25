@@ -32,8 +32,7 @@
               <v-col cols="4" sm="2" md="2" lg="2">
                 <Button
                   input_value="Analyze"
-                  color="green"
-                  dark
+                  color="#7ec2d1"
                   block
                   class="mt-16"
                   @click="submitData"
@@ -66,8 +65,9 @@ export default {
         "Soroush",
         "Bale",
         "Imo",
+        "ApplicationPolicyFile",
       ],
-      headerColor: "#f2f4f4",
+      headerColor: "#c2e4ed",
       comboboxSelectItems: [],
     };
   },
@@ -84,7 +84,9 @@ export default {
     },
     submitData() {
       if (this.comboboxSelectItems.length > 0) {
-        console.log(this.comboboxSelectItems);
+        var nameAppPass = this.comboboxSelectItems[0]
+        this.$store.state.nameAppPass = nameAppPass;
+        this.$store.dispatch('addData', nameAppPass)
         router.push("/app-analysis");
       } else {
         alert("You Should Choose the Name of a Application!");
@@ -98,10 +100,4 @@ export default {
 .v-btn {
   text-transform: none;
 }
-
-/* .background-image {
-  width: 100%;
-  height: 100%;
-  background-image: url("@/assets/images/background.jpg");
-} */
 </style>

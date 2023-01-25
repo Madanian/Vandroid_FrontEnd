@@ -5,8 +5,8 @@
     label="Choose Names of Applicatiopn You Want"
     multiple
     chips
-    item-color="green"
-    color="green"
+    item-color="#7ec2d1"
+    color="#7ec2d1"
     hide-details
     @change="passSelectedItems"
   ></v-combobox>

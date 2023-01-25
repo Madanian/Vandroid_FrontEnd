@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer
-    width=" 292px"
+    width=" 280px"
     v-model="show"
     app
     :color="color"
@@ -32,7 +32,7 @@
               <v-icon small>{{ category.icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title style="font-size: 0.8rem">{{
+              <v-list-item-title style="font-size: .9rem; font-weight: bold">{{
                 category.title
               }}</v-list-item-title>
             </v-list-item-content>
@@ -49,7 +49,7 @@
                   <v-icon small class="ma-0 pa-0 mr-1">
                     mdi-home-outline
                   </v-icon>
-                  <span style="font-size: 0.8rem">{{ category.title }}</span>
+                  <span style="font-size: .9rem; font-weight: bold">{{ category.title }}</span>
                 </div>
                 <template v-slot:actions>
                   <v-icon small> $expand </v-icon>
@@ -65,10 +65,10 @@
                   <v-list-item @click="scrollToComponent(item.scrollId)">
                     <!-- @click="$vuetify.goTo(document.querySelector(item.scrollId))" -->
                     <v-list-item-icon class="mx-0 mr-1">
-                      <v-icon small>{{ item.icon }}</v-icon>
+                      <v-icon small class="hover-color">{{ item.icon }}</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                      <v-list-item-title>{{ item.title }}</v-list-item-title>
+                      <v-list-item-title style="font-size: .8rem; font-weight: bold">{{ item.title }}</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                 </div>
@@ -146,18 +146,18 @@ export default {
             },
           ],
         },
-        {
-          expansionPanel: true,
-          title: "Dynamic Registered Components",
-          icon: "mdi-puzzle-outline",
-          items: [
-            {
-              title: "Broadcast Receiver",
-              icon: "mdi-account-key-outline",
-              scrollId: "#bbbbbb",
-            },
-          ],
-        },
+        // {
+        //   expansionPanel: true,
+        //   title: "Dynamic Registered Components",
+        //   icon: "mdi-puzzle-outline",
+        //   items: [
+        //     {
+        //       title: "Broadcast Receiver",
+        //       icon: "mdi-account-key-outline",
+        //       scrollId: "#bbbbbb",
+        //     },
+        //   ],
+        // },
         {
           expansionPanel: false,
           title: "Intent Messages",
@@ -241,11 +241,15 @@ export default {
 }
 
 .navigation .v-list-item-group .v-list-item--active {
-  color: green;
+  color: #60740a;
 }
 
 .navigation .v-list-item:hover {
-  color: green !important;
+  color: #89a606 !important;
+}
+
+.hovrr-color:hover{
+  color: #89a606 !important;
 }
 
 .navigation .v-list-item--dense .v-list-item__title,

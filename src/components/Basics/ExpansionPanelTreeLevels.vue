@@ -13,7 +13,7 @@
         <v-expansion-panels multiple>
           <v-expansion-panel
             v-for="item in items"
-            :key="item.name"
+            :key="item.target_id"
             :readonly="!item.filterCheck"
           >
             <v-expansion-panel-header
@@ -23,12 +23,24 @@
             >
               <div>
                 <v-row>
-                  <v-col cols="12" sm="4" md="4" lg="4">
+                  <v-col
+                    cols="12"
+                    sm="5"
+                    md="5"
+                    lg="5"
+                    v-if="!(item.name == '') && !(item.name == null)"
+                  >
                     <span style="font-size: 0.9rem"
                       ><b>Name: </b>{{ item.name }}</span
                     >
                   </v-col>
-                  <v-col cols="12" sm="2" md="2" lg="2">
+                  <v-col
+                    cols="12"
+                    sm="2"
+                    md="2"
+                    lg="2"
+                    v-if="!(item.exported === '') && !(item.exported === null)"
+                  >
                     <span style="font-size: 0.9rem">
                       <b>Exported: </b>
                       <span
@@ -41,25 +53,31 @@
                       >
                     </span>
                   </v-col>
-                  <v-col cols="12" sm="6" md="6" lg="6">
+                  <v-col
+                    cols="12"
+                    sm="5"
+                    md="5"
+                    lg="5"
+                    v-if="
+                      !(item.permissionName == '') &&
+                      !(item.permissionName == null)
+                    "
+                  >
                     <span style="font-size: 0.9rem"
-                      ><b>Permission: </b>{{ item.permission }}</span
+                      ><b>Permission: </b>{{ item.permissionName }}</span
                     >
                   </v-col>
                 </v-row>
               </div>
             </v-expansion-panel-header>
-            <v-expansion-panel-content
-              class="pt-4"
-              v-if="item.filters.length != 0"
-            >
+            <v-expansion-panel-content class="pt-4" v-if="item.filterCheck">
               <div class="mb-4" style="font-size: 0.9rem">
                 <b>Interfaces</b>
               </div>
               <v-expansion-panels multiple>
                 <v-expansion-panel
                   v-for="filter in item.filters"
-                  :key="filter.id"
+                  :key="filter.name"
                 >
                   <v-expansion-panel-header
                     expand-icon="mdi-menu-down"
@@ -67,7 +85,7 @@
                   >
                     <div>
                       <span style="font-size: 0.9rem"
-                        ><b>Name: </b>{{ filter.id }}</span
+                        ><b>Name: </b>{{ filter.name }}</span
                       >
                     </div>
                   </v-expansion-panel-header>
@@ -147,7 +165,9 @@ export default {
     items: Array,
     headerName: String,
   },
-  mounted() {},
+  mounted() {
+    //console.log(this.items)
+  },
 };
 </script>
 

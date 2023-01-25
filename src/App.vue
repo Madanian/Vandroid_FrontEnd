@@ -24,6 +24,6 @@ a {
 }
 
 a:hover {
-  color: green !important;
+  color: #60740a !important;
 }
 </style>
