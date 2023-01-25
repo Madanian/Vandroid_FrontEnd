@@ -25,10 +25,10 @@
         class="mb-2"
       ></ExpansionPanelTreeLevels>
 
-      <ExpansionPanel
+      <ExpansionPanelComponent
         :items="contentProvidersComponent"
         headerName="Content Providers"
-      ></ExpansionPanel>
+      ></ExpansionPanelComponent>
     </div>
   </Card>
 </template>
@@ -37,7 +37,7 @@
 import { mapState } from "vuex";
 import Card from "@/components/Basics/Card.vue";
 import ExpansionPanelTreeLevels from "@/components/Basics/ExpansionPanelTreeLevels.vue";
-import ExpansionPanel from "@/components/Basics/ExpansionPanel.vue";
+import ExpansionPanelComponent from "@/components/Basics/ExpansionPanelComponent.vue";
 export default {
   name: "ComponentsCard",
   data() {
@@ -301,7 +301,7 @@ export default {
   components: {
     Card,
     ExpansionPanelTreeLevels,
-    ExpansionPanel,
+    ExpansionPanelComponent,
   },
   computed: {
     ...mapState(["activityComponent"]),

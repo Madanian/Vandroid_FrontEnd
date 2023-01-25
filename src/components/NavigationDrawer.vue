@@ -1,6 +1,6 @@
 <template>
   <v-navigation-drawer
-    width=" 280px"
+    width=" 296px"
     v-model="show"
     app
     :color="color"
@@ -32,7 +32,7 @@
               <v-icon small>{{ category.icon }}</v-icon>
             </v-list-item-icon>
             <v-list-item-content>
-              <v-list-item-title style="font-size: .9rem; font-weight: bold">{{
+              <v-list-item-title style="font-size: 0.9rem; font-weight: bold">{{
                 category.title
               }}</v-list-item-title>
             </v-list-item-content>
@@ -47,9 +47,11 @@
               >
                 <div>
                   <v-icon small class="ma-0 pa-0 mr-1">
-                    mdi-home-outline
+                    {{ category.icon }}
                   </v-icon>
-                  <span style="font-size: .9rem; font-weight: bold">{{ category.title }}</span>
+                  <span style="font-size: 0.9rem; font-weight: bold">{{
+                    category.title
+                  }}</span>
                 </div>
                 <template v-slot:actions>
                   <v-icon small> $expand </v-icon>
@@ -68,7 +70,10 @@
                       <v-icon small class="hover-color">{{ item.icon }}</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                      <v-list-item-title style="font-size: .8rem; font-weight: bold">{{ item.title }}</v-list-item-title>
+                      <v-list-item-title
+                        style="font-size: 0.8rem; font-weight: bold"
+                        >{{ item.title }}</v-list-item-title
+                      >
                     </v-list-item-content>
                   </v-list-item>
                 </div>
@@ -92,7 +97,7 @@ export default {
         {
           expansionPanel: false,
           title: "Information",
-          icon: "mdi-google",
+          icon: "mdi-information-outline",
           scrollId: "#information",
         },
         {
@@ -125,58 +130,62 @@ export default {
           items: [
             {
               title: "Activities",
-              icon: "mdi-account-key-outline",
+              icon: "mdi-radioactive",
               scrollId: "#components",
             },
             {
               title: "Activity Alias",
-              icon: "mdi-cellphone-key",
+              icon: "mdi-rename-box",
               scrollId: "#components",
             },
-            { title: "Services", icon: "mdi-folder-key", scrollId: "#components" },
+            {
+              title: "Services",
+              icon: "mdi-playlist-check",
+              scrollId: "#components",
+            },
             {
               title: "Broadcast Receivers",
-              icon: "mdi-folder-key",
+              icon: "mdi-arrow-expand-all",
               scrollId: "#components",
             },
             {
               title: "Content Providers",
-              icon: "mdi-folder-key",
+              icon: "mdi-content-save-outline",
               scrollId: "#components",
             },
           ],
         },
-        // {
-        //   expansionPanel: true,
-        //   title: "Dynamic Registered Components",
-        //   icon: "mdi-puzzle-outline",
-        //   items: [
-        //     {
-        //       title: "Broadcast Receiver",
-        //       icon: "mdi-account-key-outline",
-        //       scrollId: "#bbbbbb",
-        //     },
-        //   ],
-        // },
+        {
+          expansionPanel: true,
+          title: "Dynamic Registered Components",
+          icon: "mdi-animation-outline",
+          items: [
+            {
+              title: "Broadcast Receiver",
+              icon: "mdi-account-key-outline",
+              scrollId: "#dynamicRegisteredComponentsCard",
+            },
+          ],
+        },
         {
           expansionPanel: false,
           title: "Intent Messages",
-          icon: "mdi-file-document-outline",
+          icon: "mdi-message-text-outline",
           scrollId: "#cccccc",
         },
         {
           expansionPanel: true,
           title: "Security Analysis Reports",
-          icon: "mdi-puzzle-outline",
+          icon: "mdi-security",
           items: [
             {
               title: "Intent spoofing",
-              icon: "mdi-account-key-outline",
+              icon: "mdi-login-variant",
               scrollId: "#aaaa",
             },
             {
               title: "Unauthorized Intent Receipt",
-              icon: "mdi-account-key-outline",
+              icon: "mdi-exclamation",
               scrollId: "#aaaa",
             },
           ],
@@ -190,7 +199,7 @@ export default {
         {
           expansionPanel: false,
           title: "Link to DevSecOps",
-          icon: "mdi-file-document-outline",
+          icon: "mdi-dialpad",
           scrollId: "#aaaa",
         },
       ],
@@ -248,7 +257,7 @@ export default {
   color: #89a606 !important;
 }
 
-.hovrr-color:hover{
+.hovrr-color:hover {
   color: #89a606 !important;
 }
 

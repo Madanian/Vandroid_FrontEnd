@@ -65,6 +65,16 @@ export default {
     commit("setContentProvidersComponent", contentProvidersComponent);
   },
 
+  async showDynamicRegisteredComponent({ commit }) {
+    const dynamicRegisteredComponentsData = await axios.get(
+      `http://127.0.0.1:8000/DynamicRegisteredComponents/`
+    );
+    let dynamicRegisteredComponent = dynamicRegisteredComponentsData.data;
+    //console.log(dynamicRegisteredComponent)
+    commit("setDynamicRegisteredComponent", dynamicRegisteredComponent);
+  },
+
+
   async addData({ commit }, nameAppPass) {
     await axios
       .post(`http://127.0.0.1:8000/information/`, {

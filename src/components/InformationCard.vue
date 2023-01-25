@@ -1,10 +1,10 @@
 <template>
   <Card :cardTitel="cardTitel" :cardIcon="cardIcon">
     <v-row slot="contentOfCard" no-gutters>
-      <v-col cols="6" sm="6" md="6" lg="6">
+      <v-col cols="12" sm="6" md="6" lg="6">
         <div>
-          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black">
-            mdi-home-outline
+          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black" size="20">
+            mdi-file-outline
           </v-icon>
           <span style="font-size: 1.1rem"><b>File Information</b></span>
         </div>
@@ -19,10 +19,10 @@
           
         </div>
       </v-col>
-      <v-col cols="6" sm="6" md="6" lg="6">
+      <v-col cols="12" sm="6" md="6" lg="6">
         <div>
-          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black">
-            mdi-home-outline
+          <v-icon class="ma-0 pa-0 mr-1 mt-n2" color="black" size="18">
+            mdi-application-outline
           </v-icon>
           <span style="font-size: 1.1rem"><b>App Information</b></span>
         </div>

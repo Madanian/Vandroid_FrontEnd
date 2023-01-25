@@ -6,4 +6,5 @@ export default {
   broadcastReceiversComponent: [],
   servicesComponent: [],
   contentProvidersComponent: [],
+  dynamicRegisteredComponent: [],
 };

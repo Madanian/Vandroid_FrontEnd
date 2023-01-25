@@ -59,13 +59,15 @@ export default {
     return {
       // rightIcons: [{ id: 1, name: "mdi-earth", link: "#" }],
       ComboboxItems: [
+        "ApplicationPolicyFile",
+        "ApplicationPolicyFile2",
+        "ApplicationPolicyFile3",
         "Telegram",
         "Whatsapp",
         "Eitaa",
         "Soroush",
         "Bale",
         "Imo",
-        "ApplicationPolicyFile",
       ],
       headerColor: "#c2e4ed",
       comboboxSelectItems: [],

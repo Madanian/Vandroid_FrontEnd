@@ -25,6 +25,10 @@ export default {
     state.contentProvidersComponent = infoData;
   },
 
+  setDynamicRegisteredComponent(state, infoData) {
+    state.dynamicRegisteredComponent = infoData;
+  },
+
   // addAxiosData(state, data) {
   //   state.generalInformation = data[0]
   //   //state.generalInformation.push(data[0]);

@@ -1,7 +1,7 @@
 <template>
   <v-file-input
     v-model="files"
-    color="#2b8700"
+    color="#7ec2d1"
     counter
     label="Choose Your Application Files"
     placeholder="Select your files"
@@ -11,7 +11,7 @@
     hide-details
   >
     <template v-slot:selection="{ index, text }">
-      <v-chip v-if="index < 2" color="#329505" dark label small>
+      <v-chip v-if="index < 2" color="#7ec2d1" dark label small>
         {{ text }}
       </v-chip>
 
