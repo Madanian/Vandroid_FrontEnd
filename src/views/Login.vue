@@ -13,12 +13,12 @@
         <Input
           outlined
           dense
-          name="email"
-          type="email"
-          v-model.trim="formData.email"
+          name="username"
+          type="username"
+          v-model.trim="formData.username"
           labelTag
-          labelText="Email Address"
-          placeholder="Email Address"
+          labelText="Username"
+          placeholder="Username"
           hide_details
           class="mb-3"
         />
@@ -98,9 +98,9 @@ export default {
   data() {
     return {
       formData: {
-        email: "",
+        username: "",
         password: "",
-        rememberMe: false,
+        // rememberMe: false,
       },
       items: [
         {
@@ -119,13 +119,13 @@ export default {
     onSubmit() {
       //console.log(this.formData);
       const data = this.formData;
-      // this.$store.dispatch('login', {data})
-      this.$store.commit("login", "absdf");
+      this.$store.dispatch('login', {data})
+      // this.$store.commit("login", "absdf");
       router.push("/choose-app");
     },
     logout() {
       this.$store.commit("logout");
-      router.push("/");
+      router.push("/choose-app");
     },
   },
 };

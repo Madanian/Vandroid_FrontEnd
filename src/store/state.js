@@ -11,4 +11,9 @@ export default {
   customPermission: [],
   APIpermission: [],
   intentMessage: [],
+
+  user: [],
+
+  isAuthenticated: false,
+  token: "",
 };

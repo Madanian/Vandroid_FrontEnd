@@ -45,8 +45,44 @@ export default {
     state.intentMessage = infoData;
   },
 
-  // addAxiosData(state, data) {
-  //   state.generalInformation = data[0]
-  //   //state.generalInformation.push(data[0]);
+  // onStart(state) {
+  //   let token = localStorage.getItem("token");
+  //   if (token) {
+  //     state.isAuthenticated = true;
+  //     state.token = token;
+  //   } else {
+  //     state.isAuthenticated = false;
+  //     state.token = "";
+  //   }
   // },
+
+  login(state, token) {
+    // handle authentication
+    // console.log("here");
+    // console.log(localStorage);
+    console.log(token)
+    if (token) {
+      state.isAuthenticated = true;
+      state.token = token;
+      localStorage.setItem("token", token);
+    } else {
+      state.isAuthenticated = false;
+      state.token = "";
+      localStorage.removeItem("token");
+    }
+  },
+
+  logout(state) {
+    // handle authentication
+    // console.log("logout");
+    // console.log("here");
+    // console.log(localStorage);
+    state.isAuthenticated = false;
+    state.token = "";
+    localStorage.removeItem("token");
+  },
+
+  register(state, data) {
+    state.user.push(data);
+  },
 };

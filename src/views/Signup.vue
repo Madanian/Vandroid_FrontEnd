@@ -11,22 +11,22 @@
 
       <v-form @submit.prevent="onSubmit" ref="form">
         <v-row class="mb-2 mt-4 justify-space-between">
-          <v-col cols="12" sm="12" md="6">
+          <v-col cols="12" sm="12" md="12">
             <Input
               outlined
               dense
-              name="firstname"
+              name="username"
               type="text"
-              v-model.trim="formData.firstname"
+              v-model.trim="formData.username"
               labelTag
-              labelText="First Name"
-              placeholder="First Name"
+              labelText="Username"
+              placeholder="Username"
               hide_details
               class="mb-2"
             />
           </v-col>
 
-          <v-col cols="12" sm="12" md="6">
+          <!-- <v-col cols="12" sm="12" md="6">
             <Input
               outlined
               dense
@@ -39,9 +39,9 @@
               hide_details
               class="mb-2"
             />
-          </v-col>
+          </v-col> -->
 
-          <v-col cols="12" sm="12" md="6">
+          <v-col cols="12" sm="12" md="12">
             <Input
               outlined
               dense
@@ -56,7 +56,7 @@
             />
           </v-col>
 
-          <v-col cols="12" sm="12" md="6">
+          <!-- <v-col cols="12" sm="12" md="6">
             <Input
               outlined
               dense
@@ -69,7 +69,7 @@
               hide_details
               class="mb-2"
             />
-          </v-col>
+          </v-col> -->
 
           <v-col cols="12" sm="12" md="12">
             <Input
@@ -85,7 +85,7 @@
               class="mb-n2"
             />
           </v-col>
-          <v-col cols="12" sm="12" md="12">
+          <!-- <v-col cols="12" sm="12" md="12">
             <Input
               outlined
               dense
@@ -98,7 +98,7 @@
               hint="At Least 8 Characters"
               class="mb-n2"
             />
-          </v-col>
+          </v-col> -->
 
           <v-col cols="12" sm="12" md="12">
             <Button
@@ -142,12 +142,12 @@ export default {
   data() {
     return {
       formData: {
-        firstname: "",
-        lastname: "",
+        username: "",
+        // lastname: "",
         email: "",
-        tell: "",
+        // tell: "",
         password: "",
-        rePassword: "",
+        // rePassword: "",
       },
       items: [
         {
@@ -166,9 +166,10 @@ export default {
     onSubmit() {
       this.$refs.form.reset();
       //console.log(this.formData);
-      // const data = this.formData;
-      // this.$store.dispatch("register", { data });
+      const data = this.formData;
+      this.$store.dispatch("register", { data });
       router.push("/choose-app");
+      console.log(data);
     },
   },
 };

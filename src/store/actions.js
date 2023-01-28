@@ -132,4 +132,38 @@ export default {
         console.log(response.data);
       });
   },
+
+  async login({ commit }, { data }) {
+    // console.log("I am in: action->login");
+    await axios
+      .post(`http://127.0.0.1:8000/Accounts/api/token/`, {
+        username: data.username,
+        password: data.password,
+        // rememberMe: data.rememberMe,
+      })
+      .then((response) => {
+        let data = response.data;
+        commit("login", data.access);
+        console.log("loged in successfully! and this is your access token:")
+        console.log(data.access)
+        console.log(" ")
+      });
+  },
+
+  async register({ commit }, { data }) {
+    // console.log("I am in: action->register");
+    await axios
+      .post(`http://127.0.0.1:8000/Accounts/register/`, {
+        username: data.username,
+        password: data.password,
+        email: data.email,
+      })
+      .then((response) => {
+        let data = response.data;
+        commit("register", data.access);
+        console.log("registered successfully! and this is your access token:")
+        console.log(data.access)
+        console.log(" ")
+      });
+  },
 };
